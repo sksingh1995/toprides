@@ -2,11 +2,15 @@
   <header>
     <div class="container-fluid">
       <div class="d-flex align-items-center">
-        <div class="mr-5"><img src="assets/images/logo.png" alt="logo" /></div>
+        <div class="mr-5">
+          <a routerLink="/">
+            <img src="assets/images/logo.png" alt="logo" />
+          </a>
+        </div>
         <div class="mr-auto">
           <ul class="hd_menu">
             <li><a href="#">Driver</a></li>
-            <li><a href="#">Rider</a></li>
+            <li><a routerLink="/rider">Rider</a></li>
             <li><a href="#">Travel Agencies</a></li>
             <li><a href="#">Business</a></li>
           </ul>
@@ -14,6 +18,12 @@
         <div>
           <button type="button" class="btn btn-primary">sign in</button>
           <button type="button" class="btn btn-primary">sign up</button>
+        </div>
+        <div *ngIf="isLoggedIn">
+          <ul class="hd_menu">
+            <li><a href="#">Help</a></li>
+            <li><a href="#">Gyanendra</a></li>
+          </ul>
         </div>
       </div>
     </div>

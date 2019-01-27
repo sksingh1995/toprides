@@ -3,9 +3,6 @@ import { BrowserModule } from "@angular/platform-browser";
 import { FormsModule } from "@angular/forms";
 import { HttpClientModule } from "@angular/common/http";
 
-import { HttpClientInMemoryWebApiModule } from "angular-in-memory-web-api";
-import { InMemoryDataService } from "./in-memory-data.service";
-
 import { AppRoutingModule } from "./app-routing.module";
 
 import { AppComponent } from "./app.component";
@@ -15,16 +12,15 @@ import { PLATFORM_ID, APP_ID, Inject } from "@angular/core";
 import { isPlatformBrowser } from "@angular/common";
 import { HeaderComponent } from "./components/partials/header/header.component";
 import { FooterComponent } from "./components/partials/footer/footer.component";
+import { TransferHttpCacheModule } from "@nguniversal/common";
 
 @NgModule({
   imports: [
-    BrowserModule.withServerTransition({ appId: "tour-of-heroes" }),
+    BrowserModule.withServerTransition({ appId: "toprides" }),
     FormsModule,
     AppRoutingModule,
     HttpClientModule,
-    HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService, {
-      dataEncapsulation: false
-    })
+    TransferHttpCacheModule
   ],
   declarations: [AppComponent, HomeComponent, HeaderComponent, FooterComponent],
   providers: [],
