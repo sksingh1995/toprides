@@ -1,0 +1,101 @@
+.carrerTop h2 {
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+.seeOpenings {
+  color: #000;
+  line-height: 35px;
+  padding: 0px 25px;
+  font-size: 14px;
+}
+.carrerMid .title {
+  font-weight: 400;
+  color: rgba(0, 0, 0, 0.7);
+  font-size: 20px;
+  margin-bottom: 5px;
+  margin-top: 15px;
+  margin-bottom: 10px;
+}
+.carrerMid {
+  background: #f9f9f9;
+}
+.carrerListing .single-post {
+  padding: 30px;
+  background-color: #f9f9ff;
+  margin-bottom: 30px;
+}
+.carrerListing .single-post .thumb .tags {
+  margin-top: 30px;
+}
+.carrerListing .single-post .thumb .tags li {
+  margin-bottom: 5px;
+  display: inline-block;
+  background: #fff;
+  border: 1px solid #eee;
+  padding: 6px 15px;
+  -webkit-transition: all 0.3s ease 0s;
+  -moz-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+}
+.carrerListing .single-post .thumb .tags li a {
+  color: #777777;
+  -webkit-transition: all 0.3s ease 0s;
+  -moz-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+}
+.carrerListing .single-post .btns li {
+  display: inline-block;
+  background-color: #fff;
+  border: 1px solid #eee;
+  padding: 10px 15px;
+  -webkit-transition: all 0.3s ease 0s;
+  -moz-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+}
+.carrerListing .single-post .btns li i,
+.carrerListing .single-post .btns li a {
+  text-transform: uppercase;
+  font-weight: 500;
+  color: #222;
+}
+.carrerListing .single-post h6 {
+  margin-top: 10px;
+  color: #222;
+  font-size: 14px;
+  font-weight: 300;
+  margin-bottom: 15px;
+}
+.single-post .title h4 {
+  margin-bottom: 10px;
+  color: #222222;
+  font-weight: 600;
+}
+.single-post .address {
+  color: #222;
+  margin-bottom: 15px;
+}
+.single-post p {
+  color: #777;
+}
+.carrerListing h2 {
+  margin-bottom: 25px;
+  font-weight: 600;
+}
+@media only screen and (min-width: 768px) {
+  .careerTopImg {
+    background: url("/assets/images/working.jpg") no-repeat center center /
+      cover;
+  }
+  .workus-content {
+    width: 80%;
+    margin-bottom: 25px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .careerTopImg {
+    margin-bottom: 15px;
+  }
+}

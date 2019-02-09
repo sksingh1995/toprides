@@ -1,0 +1,48 @@
+<div>
+  <div class="modal-header">
+    <h5 class="modal-title">Login</h5>
+    <button type="button" class="close" mat-dialog-close>
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <form #form="ngForm" (submit)="form.valid && onLoginSubmit(form)">
+      <div class="text-center">
+        <img src="assets/images/db_logo.png" />
+      </div>
+      <div class="mt-5">
+        <div class="mt-4">
+          <div class="form-group">
+            <input
+              type="text"
+              name="phone"
+              ngModel
+              #phone="ngModel"
+              required
+              number
+              minlength="10"
+              maxlength="10"
+              class="form-control"
+              placeholder="Mobile number"
+            />
+            <span class="error" *ngIf="form.submitted && phone.errors?.required"
+              >Please enter your phone number</span
+            >
+            <span class="error" *ngIf="form.submitted && phone.errors?.number"
+              >Please enter a valid phone number</span
+            >
+          </div>
+          <div class="mb_100">
+            <button
+              [disabled]="!form.valid || loading"
+              type="submit"
+              class="btn btn-dark w-100"
+            >
+              {{ loading ? "Please Wait . . ." : "Next" }}
+            </button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

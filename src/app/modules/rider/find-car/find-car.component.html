@@ -1,0 +1,66 @@
+<section class="innerbanner">
+  <h1>Fare</h1>
+</section>
+
+<section>
+  <div class="container">
+    <div class="map_sectn">
+      <!-- <img src="assets/images/map.jpg" alt="image" class="img-responsive" /> -->
+      <agm-map
+        [latitude]="lat"
+        [longitude]="lng"
+        [scrollwheel]="false"
+        [streetViewControl]="false"
+        [zoomControl]="false"
+        [zoom]="zoom"
+        (mapReady)="mapReady()"
+        (mapClick)="mapClicked($event)"
+      >
+        <agm-marker
+          [latitude]="lat"
+          [longitude]="lng"
+          [iconUrl]="icon"
+          [animation]="animation"
+        ></agm-marker>
+      </agm-map>
+      <div class="map_form">
+        <h1>Topride Fare Estimator</h1>
+        <span class="d-block">
+          How much does Topride cost in your city?
+        </span>
+        <span class="d-block">
+          Calculate a fare estimate for your next trip. Simply enter a pickup
+          location and destination to get started.
+        </span>
+        <div class="d-block mt-3">
+          <div class="form-group">
+            <input
+              type="text"
+              #pickupLocation
+              class="form-control"
+              placeholder="Enter pickup location"
+            />
+            <div
+              class="form_icon"
+              title="Current Location"
+              (click)="setCurrentPosition()"
+            >
+              <i class="fas fa-paper-plane"></i>
+            </div>
+          </div>
+          <div class="form-group">
+            <input
+              type="text"
+              class="form-control"
+              #dropLocation
+              placeholder="Enter destination"
+            />
+            <div class="form_icon_2">
+              <i class="fas fa-arrow-right"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
