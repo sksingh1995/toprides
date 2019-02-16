@@ -1,14 +1,6 @@
 /// <reference types="@types/googlemaps" />
 
-import {
-  Component,
-  OnInit,
-  ElementRef,
-  ViewChild,
-  NgZone
-} from "@angular/core";
-import { MapsAPILoader } from "@agm/core";
-
+import { Component, OnInit, NgZone } from "@angular/core";
 @Component({
   selector: "app-find-car",
   templateUrl: "./find-car.component.html",
@@ -24,39 +16,12 @@ export class FindCarComponent implements OnInit {
   location = "";
   animation: any;
 
-  @ViewChild("pickupLocation")
-  public pickupLocation: ElementRef;
-  constructor(private mapsAPILoader: MapsAPILoader, private ngZone: NgZone) {}
+  constructor(private ngZone: NgZone) {}
 
-  ngOnInit() {
-    //set current position
-    // this.setCurrentPosition();
+  ngOnInit() {}
 
-    //load Places Autocomplete
-    this.mapsAPILoader.load().then(() => {
-      let autocomplete = new google.maps.places.Autocomplete(
-        this.pickupLocation.nativeElement,
-        {
-          types: ["establishment"],
-          componentRestrictions: { country: "in" }
-        }
-      );
-      autocomplete.addListener("place_changed", () => {
-        this.ngZone.run(() => {
-          //get the place result
-          let place: google.maps.places.PlaceResult = autocomplete.getPlace();
-
-          //verify result
-          if (place.geometry === undefined || place.geometry === null) {
-            return;
-          }
-
-          //set latitude, longitude and zoom
-          this.lat = place.geometry.location.lat();
-          this.lng = place.geometry.location.lng();
-        });
-      });
-    });
+  onDropLocationSelect(place: google.maps.places.PlaceResult) {
+    console.log(place);
   }
 
   setCurrentPosition() {

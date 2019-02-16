@@ -6,9 +6,11 @@ import { FindCarComponent } from "./find-car/find-car.component";
 import { AgmCoreModule } from "@agm/core";
 import { GOOGLE_API_KEY } from "../../config/const";
 import { AuthGuard } from "../../services/auth-guard.service";
+import { GooglePlaceAutocompleteDirective } from "../../directives/gpa.directive";
+import { RiderComponent } from "./rider.component";
 
 const routes: Routes = [
-  { path: "", redirectTo: "dashboard" },
+  { path: "", component: RiderComponent },
   {
     path: "dashboard",
     component: RiderDashboardComponent
@@ -18,7 +20,12 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [RiderDashboardComponent, FindCarComponent],
+  declarations: [
+    RiderComponent,
+    RiderDashboardComponent,
+    FindCarComponent,
+    GooglePlaceAutocompleteDirective
+  ],
   imports: [
     CommonModule,
     AgmCoreModule.forRoot({

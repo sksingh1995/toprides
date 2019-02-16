@@ -2,28 +2,30 @@
   <div class="container-fluid">
     <div class="d-flex align-items-center">
       <div class="mr-auto">
-        <ul class="footer_links">
+        <ul class="footer_links ftgap">
           <li><a routerLink="/about">About Us</a></li>
           <li><a routerLink="/career">Career</a></li>
-          <li><a href="#">Blog</a></li>
+          <li><a routerLink="/coming-soon">Blog</a></li>
         </ul>
       </div>
       <div>
-        <ul class="footer_links">
-          <li><a href="#">Become a driver</a></li>
-          <li><a href="#">Become a rider</a></li>
+        <ul class="footer_links ftgap2">
+          <li><a routerLink="/driver">Become a Driver</a></li>
+          <li><a routerLink="/rider">Become a Rider</a></li>
         </ul>
       </div>
     </div>
     <div class="d-flex align-items-center mt-3">
       <div class="mr-auto">
-        <img src="assets/images/footerlogo.png" alt="logo" />
+        <img routerLink="/" src="assets/images/footerlogo.png" alt="logo" />
       </div>
       <div>
-        <ul class="footer_links">
-          <li><a routerLink="/terms-and-conditions">Terms & Conditions</a></li>
-          <li><a routerLink="/privacy-policy">Privacy Policy</a></li>
-          <li><a routerLink="/">&copy; 2019 Topride.com</a></li>
+        <ul class="footer_links ftgap2">
+          <li>
+            <a routerLink="/terms-and-conditions">Terms &amp; Conditions</a>
+          </li>
+          <li><a routerLink="privacy-policy">Privacy Policy</a></li>
+          <li><a routerLink="/">© 2019 Topride.com</a></li>
         </ul>
       </div>
     </div>

@@ -1,9 +1,11 @@
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
 import { HomeComponent } from "./components/home/home.component";
+import { ComingSoonComponent } from "./components/coming-soon/coming-soon.component";
 
 const routes: Routes = [
   { path: "", component: HomeComponent },
+  { path: "coming-soon", component: ComingSoonComponent },
   { path: "about", loadChildren: "./modules/about/about.module#AboutModule" },
   {
     path: "career",
@@ -19,7 +21,11 @@ const routes: Routes = [
     loadChildren:
       "./modules/terms-and-conditions/terms-and-conditions.module#TermsAndConditionsModule"
   },
-  { path: "rider", loadChildren: "./modules/rider/rider.module#RiderModule" }
+  { path: "rider", loadChildren: "./modules/rider/rider.module#RiderModule" },
+  {
+    path: "driver",
+    loadChildren: "./modules/driver/driver.module#DriverModule"
+  }
 ];
 
 @NgModule({

@@ -4,6 +4,7 @@ import { FormsModule } from "@angular/forms";
 import { HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http";
 
 import { AppRoutingModule } from "./app-routing.module";
+import { CarouselModule } from "ngx-owl-carousel-o";
 
 import { AppComponent } from "./app.component";
 import { HomeComponent } from "./components/home/home.component";
@@ -19,6 +20,7 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { CustomFormsModule } from "ngx-custom-validators";
 import { LoginOtpComponent } from "./components/login-otp/login-otp.component";
 import { HttpInterceptorService } from "./services/http-interceptor.service";
+import { ComingSoonComponent } from "./components/coming-soon/coming-soon.component";
 
 @NgModule({
   imports: [
@@ -26,6 +28,7 @@ import { HttpInterceptorService } from "./services/http-interceptor.service";
     BrowserModule.withServerTransition({ appId: "toprides" }),
     FormsModule,
     AppRoutingModule,
+    CarouselModule,
     FormsModule,
     HttpClientModule,
     MatDialogModule,
@@ -35,6 +38,7 @@ import { HttpInterceptorService } from "./services/http-interceptor.service";
   declarations: [
     AppComponent,
     HomeComponent,
+    ComingSoonComponent,
     HeaderComponent,
     FooterComponent,
     LoginComponent,

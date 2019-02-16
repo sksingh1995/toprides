@@ -36,7 +36,7 @@
           <div class="form-group">
             <input
               type="text"
-              #pickupLocation
+              gpa
               class="form-control"
               placeholder="Enter pickup location"
             />
@@ -52,7 +52,8 @@
             <input
               type="text"
               class="form-control"
-              #dropLocation
+              gpa
+              (onSelect)="onDropLocationSelect($event)"
               placeholder="Enter destination"
             />
             <div class="form_icon_2">
