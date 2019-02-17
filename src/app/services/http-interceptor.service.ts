@@ -34,7 +34,7 @@ export class HttpInterceptorService implements HttpInterceptor {
     // }
 
     request = request.clone({
-      url: API_URL + request.url
+      url: "https://cors-anywhere.herokuapp.com/" + request.url
       // headers: request.headers.append("Access-Control-Allow-Origin", "*")
     });
 
