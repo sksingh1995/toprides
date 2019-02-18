@@ -38,6 +38,7 @@
 }
 .inn_info h1 {
   color: #fff;
+      font-weight: 700;
 }
 .inn_info {
   position: absolute;

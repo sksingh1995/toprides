@@ -38,6 +38,7 @@
 }
 .inn_info h1 {
   color: #fff;
+  font-weight:700;
 }
 .inn_info {
   position: absolute;
@@ -48,6 +49,7 @@
 .inn_box {
   border: 2px solid #f8f8f8;
   border-radius: 4px;
+      min-height: 338px;
 }
 .inn_box:hover {
   -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16),
