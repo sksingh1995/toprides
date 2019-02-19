@@ -14,10 +14,15 @@
           </div>
           <div class="col-lg-6">
             <div class="profile_info pull-right">
-              <!-- <img src="assets/images/profile_pic.png" class="img-responsive" /> -->
+              <img *ngIf="avatar" [src]="avatar" class="img-responsive" />
               <i class="fas fa-camera fa_edit"></i>
-              <input type="file" class="upload" />
+              <input type="file" class="upload" (change)="handleAvatarUpload($event)" />
+              <textarea style="display: none;"
+              name="avatar"
+              ngModel [(ngModel)]="avatar"></textarea>
+              
             </div>
+            <p class="error text-right mt-4" *ngIf="form.submitted && avatar == ''">Please upload your photo</p>
           </div>
         </div>
         <div class="row mt-5 form-group">
@@ -307,6 +312,21 @@
               <input type="checkbox" name="pollution" ngModel value="1" />
               <span class="checkmark"></span>
             </label>
+
+            <input
+              type="file"
+              name="attachments[]"
+              multiple
+              ngModel
+              #attachment="ngModel"
+              accept="image/x-png,image/jpeg"
+              (change)="handleFileChange($event)"
+            />
+            <span
+            class="error"
+            *ngIf="form.submitted && files.length == 0"
+            >Please upload your documents.</span
+          >
           </div>
         </div>
         <input type="hidden" name="submitted" ngModel value="1" />
