@@ -12,6 +12,10 @@ const routes: Routes = [
     loadChildren: "./modules/career/career.module#CareerModule"
   },
   {
+    path: "enrollment",
+    loadChildren: "./modules/enrollment/enrollment.module#EnrollmentModule"
+  },
+  {
     path: "privacy-policy",
     loadChildren:
       "./modules/privacy-policy/privacy-policy.module#PrivacyPolicyModule"

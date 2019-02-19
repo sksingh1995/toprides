@@ -1,6 +1,5 @@
 import { NgModule } from "@angular/core";
 import { BrowserModule } from "@angular/platform-browser";
-import { FormsModule } from "@angular/forms";
 import { HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http";
 
 import { AppRoutingModule } from "./app-routing.module";
@@ -17,22 +16,20 @@ import { FooterComponent } from "./components/partials/footer/footer.component";
 import { TransferHttpCacheModule } from "@nguniversal/common";
 import { MatDialogModule } from "@angular/material/dialog";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
-import { CustomFormsModule } from "ngx-custom-validators";
 import { LoginOtpComponent } from "./components/login-otp/login-otp.component";
 import { HttpInterceptorService } from "./services/http-interceptor.service";
 import { ComingSoonComponent } from "./components/coming-soon/coming-soon.component";
+import { SharedModule } from "./modules/shared.module";
 
 @NgModule({
   imports: [
     BrowserAnimationsModule,
     BrowserModule.withServerTransition({ appId: "toprides" }),
-    FormsModule,
     AppRoutingModule,
     CarouselModule,
-    FormsModule,
+    SharedModule,
     HttpClientModule,
     MatDialogModule,
-    CustomFormsModule,
     TransferHttpCacheModule
   ],
   declarations: [

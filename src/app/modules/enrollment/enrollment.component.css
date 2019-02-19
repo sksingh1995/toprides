@@ -1,0 +1,47 @@
+.img_postn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.innertxt {
+  font-weight: 600;
+  color: #777;
+}
+.inner_bgg {
+  background-color: #e5e5e5;
+  position: relative;
+  margin-top: 50px;
+  background-image: url(/assets/images/innerbgg.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding-top: 310px;
+}
+.no {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.no span {
+  color: #777;
+  background-color: #fff;
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+  display: block;
+  text-align: center;
+  font-weight: 600;
+  padding: 8px 0px;
+}
+.form-group {
+  margin-bottom: 40px;
+}
+.inn_info h1 {
+  color: #fff;
+}
+.inn_info {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

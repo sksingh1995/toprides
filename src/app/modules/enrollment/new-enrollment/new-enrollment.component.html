@@ -1,0 +1,324 @@
+<section class="innerbanner3">
+  <h1 class="w420">Enrollment For - Cab</h1>
+</section>
+
+<section class="p-60 inn_bg">
+  <div class="container">
+    <form #form="ngForm" (submit)="form.valid && onNewRegistration(form)">
+      <div class="cc_box">
+        <div class="row justify-content-between align-items-center">
+          <div class="col-lg-6 mr-auto">
+            <h3 class="innerheading2">
+              Genearl Info
+            </h3>
+          </div>
+          <div class="col-lg-6">
+            <div class="profile_info pull-right">
+              <!-- <img src="assets/images/profile_pic.png" class="img-responsive" /> -->
+              <i class="fas fa-camera fa_edit"></i>
+              <input type="file" class="upload" />
+            </div>
+          </div>
+        </div>
+        <div class="row mt-5 form-group">
+          <div class="col-12 col-lg-6">
+            <label>First Name</label>
+            <input
+              type="text"
+              class="form-control"
+              name="fname"
+              #fname="ngModel"
+              ngModel
+              required
+            />
+            <span class="error" *ngIf="form.submitted && fname.errors?.required"
+              >First name is required.</span
+            >
+          </div>
+          <div class="col-12 col-lg-6">
+            <label>Last Name</label>
+            <input
+              type="text"
+              class="form-control"
+              name="lname"
+              #lname="ngModel"
+              ngModel
+              required
+            />
+            <span class="error" *ngIf="form.submitted && lname.errors?.required"
+              >Last name is required.</span
+            >
+          </div>
+        </div>
+        <div class="row form-group">
+          <div class="col-12 col-lg-12">
+            <label>Address</label>
+            <input
+              type="text"
+              class="form-control"
+              name="address"
+              #address="ngModel"
+              ngModel
+              required
+            />
+            <span
+              class="error"
+              *ngIf="form.submitted && address.errors?.required"
+              >Please enter your address.</span
+            >
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12 col-lg-6">
+            <label>Phone</label>
+            <input
+              type="text"
+              class="form-control"
+              name="phone"
+              #phone="ngModel"
+              ngModel
+              required
+              number
+              maxlength="10"
+              minlength="10"
+            />
+            <span class="error" *ngIf="form.submitted && phone.errors?.required"
+              >Phone number is required.</span
+            >
+            <span
+              class="error"
+              *ngIf="
+                form.submitted &&
+                (phone.errors?.number ||
+                  phone.errors?.maxlength ||
+                  phone.errors?.minlength)
+              "
+              >Please enter a valid phone number.</span
+            >
+          </div>
+          <div class="col-12 col-lg-6">
+            <label>Email</label>
+            <input
+              type="text"
+              class="form-control"
+              name="email"
+              #email="ngModel"
+              ngModel
+              required
+              ngvemail
+            />
+            <span class="error" *ngIf="form.submitted && email.errors?.required"
+              >Email is required.</span
+            >
+            <span class="error" *ngIf="form.submitted && email.errors?.email"
+              >Please enter a valid email address.</span
+            >
+          </div>
+        </div>
+      </div>
+      <hr />
+      <div class="cc_box">
+        <h3 class="innerheading2">Car Detail</h3>
+        <div class="row  form-group mt-4">
+          <div class="col-12 col-lg-6">
+            <label>Car No.</label>
+            <input
+              type="text"
+              class="form-control"
+              name="carno"
+              #carno="ngModel"
+              ngModel
+              required
+            />
+            <span class="error" *ngIf="form.submitted && carno.errors?.required"
+              >Please enter the car number.</span
+            >
+          </div>
+          <div class="col-12 col-lg-6">
+            <label>Chassis No.</label>
+            <input
+              type="text"
+              class="form-control"
+              name="chesis"
+              #chesis="ngModel"
+              ngModel
+              required
+            />
+            <span
+              class="error"
+              *ngIf="form.submitted && chesis.errors?.required"
+              >Please enter the chasis number.</span
+            >
+          </div>
+        </div>
+        <div class="row form-group">
+          <div class="col-12 col-lg-6">
+            <label>Car Model</label>
+            <input
+              type="text"
+              class="form-control"
+              name="carmodel"
+              #carmodel="ngModel"
+              ngModel
+              required
+            />
+            <span
+              class="error"
+              *ngIf="form.submitted && carmodel.errors?.required"
+              >Please enter the car model.</span
+            >
+          </div>
+          <div class="col-12 col-lg-6">
+            <label>Kms Run</label>
+            <input
+              type="text"
+              class="form-control"
+              name="kmsrun"
+              #kmsrun="ngModel"
+              ngModel
+              required
+              number
+            />
+            <span
+              class="error"
+              *ngIf="form.submitted && kmsrun.errors?.required"
+              >Please enter the total number of km run.</span
+            >
+            <span class="error" *ngIf="form.submitted && kmsrun.errors?.number"
+              >Please enter a valid value.</span
+            >
+          </div>
+        </div>
+        <div class="row form-group">
+          <div class="col-12 col-lg-6">
+            <label>Insurance Policy No.</label>
+            <input
+              type="text"
+              class="form-control"
+              name="ipn"
+              #ipn="ngModel"
+              ngModel
+              required
+            />
+            <span class="error" *ngIf="form.submitted && ipn.errors?.required"
+              >Please enter the insurance policy number.</span
+            >
+          </div>
+          <div class="col-12 col-lg-6">
+            <label>AITP/State Permit</label>
+            <input
+              type="text"
+              class="form-control"
+              name="permit"
+              #permit="ngModel"
+              ngModel
+              required
+            />
+            <span
+              class="error"
+              *ngIf="form.submitted && permit.errors?.required"
+              >Please enter the permitted state.</span
+            >
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-4">
+            <label class="chckbx_custom">
+              <span class="chk_txt">First Aid Kit</span>
+              <input type="checkbox" name="fak" ngModel value="1" />
+              <span class="checkmark"></span>
+            </label>
+          </div>
+
+          <div class="col-lg-4">
+            <label class="chckbx_custom">
+              <span class="chk_txt">Fire Estinguisher</span>
+              <input
+                type="checkbox"
+                name="fire_estinguisher"
+                ngModel
+                value="1"
+              />
+              <span class="checkmark"></span>
+            </label>
+          </div>
+
+          <div class="col-lg-4">
+            <label class="chckbx_custom">
+              <span class="chk_txt">Gps Enabled</span>
+              <input type="checkbox" name="gps" ngModel value="1" />
+              <span class="checkmark"></span>
+            </label>
+          </div>
+        </div>
+      </div>
+      <hr />
+      <div class="cc_box">
+        <h3 class="innerheading2">Tick on the Documents Enclosed</h3>
+        <div class="row mt-4">
+          <div class="col-12 col-lg-4">
+            <label class="chckbx_custom">
+              <span class="chk_txt">RC</span>
+              <input type="checkbox" name="rc" ngModel value="1" />
+              <span class="checkmark"></span>
+            </label>
+            <label class="chckbx_custom">
+              <span class="chk_txt">Cancelled Cheque</span>
+              <input
+                type="checkbox"
+                name="cancelled_cheque"
+                ngModel
+                value="1"
+              />
+              <span class="checkmark"></span>
+            </label>
+            <label class="chckbx_custom">
+              <span class="chk_txt">Address Prool (Local & Parmanent)</span>
+              <input type="checkbox" name="address_proof" ngModel value="1" />
+              <span class="checkmark"></span>
+            </label>
+          </div>
+          <div class="col-12 col-lg-4">
+            <label class="chckbx_custom">
+              <span class="chk_txt">Insurance</span>
+              <input type="checkbox" name="insurance" ngModel value="1" />
+              <span class="checkmark"></span>
+            </label>
+            <label class="chckbx_custom">
+              <span class="chk_txt">PAN Card</span>
+              <input type="checkbox" name="pan_card" ngModel value="1" />
+              <span class="checkmark"></span>
+            </label>
+            <label class="chckbx_custom">
+              <span class="chk_txt">ID Proof (Voter, Adhar Card, License)</span>
+              <input type="checkbox" name="id_proof" ngModel value="1" />
+              <span class="checkmark"></span>
+            </label>
+          </div>
+          <div class="col-12 col-lg-4">
+            <label class="chckbx_custom">
+              <span class="chk_txt">Bank Account Details</span>
+              <input type="checkbox" name="bank_account" ngModel value="1" />
+              <span class="checkmark"></span>
+            </label>
+            <label class="chckbx_custom">
+              <span class="chk_txt">Car Pollution</span>
+              <input type="checkbox" name="pollution" ngModel value="1" />
+              <span class="checkmark"></span>
+            </label>
+          </div>
+        </div>
+        <input type="hidden" name="submitted" ngModel value="1" />
+        <div class="row text-center mt-5">
+          <button [disabled]="submitting" class="btn-dark btn m-auto dark_ovr">
+            {{ submitting ? "Please Wait . . ." : "Submit" }}
+          </button>
+        </div>
+        <div *ngIf="enrolled" class="mt-2 alert alert-success text-center">
+          Enrollment Successfull
+        </div>
+      </div>
+    </form>
+  </div>
+</section>
