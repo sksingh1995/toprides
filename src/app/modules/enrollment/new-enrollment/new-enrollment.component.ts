@@ -25,8 +25,8 @@ export class NewEnrollmentComponent {
   handleAvatarUpload(e) {
     let reader = new FileReader();
 
-    reader.onload = e => {
-      this.avatar = e.target.result;
+    reader.onload = (data:any) => {
+      this.avatar = data.target.result;
     };
 
     reader.readAsDataURL(e.target.files[0]);

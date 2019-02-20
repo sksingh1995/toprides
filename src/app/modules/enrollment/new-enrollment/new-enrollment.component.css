@@ -22,6 +22,17 @@
   top: 0;
   left: 0;
 }
+.p-rel{position: relative;}
+.file{
+  position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+}
 .no span {
   color: #777;
   background-color: #fff;
@@ -34,7 +45,7 @@
   padding: 8px 0px;
 }
 .form-group {
-  margin-bottom: 40px;
+  margin-bottom: 20px;
 }
 .inn_info h1 {
   color: #fff;

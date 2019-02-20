@@ -227,7 +227,12 @@
           </div>
         </div>
 
-        <div class="row">
+        
+      </div>
+      <hr />
+      <div class="cc_box">
+        <h3 class="innerheading2">Tick on the Documents Enclosed</h3>
+        <div class="row mt-4">
           <div class="col-lg-4">
             <label class="chckbx_custom">
               <span class="chk_txt">First Aid Kit</span>
@@ -257,11 +262,7 @@
             </label>
           </div>
         </div>
-      </div>
-      <hr />
-      <div class="cc_box">
-        <h3 class="innerheading2">Tick on the Documents Enclosed</h3>
-        <div class="row mt-4">
+        <div class="row ">
           <div class="col-12 col-lg-4">
             <label class="chckbx_custom">
               <span class="chk_txt">RC</span>
@@ -313,7 +314,9 @@
               <span class="checkmark"></span>
             </label>
 
-            <input
+            <div class="p-rel">
+              <button type="submit" class="btn btn-dark">Browse</button>
+              <input
               type="file"
               name="attachments[]"
               multiple
@@ -321,7 +324,11 @@
               #attachment="ngModel"
               accept="image/x-png,image/jpeg"
               (change)="handleFileChange($event)"
+              class="file"
             />
+            </div>
+
+            
             <span
             class="error"
             *ngIf="form.submitted && files.length == 0"
