@@ -1,0 +1,44 @@
+.businessTopSec h3,
+.businessMidSec h3 {
+  font-weight: 600;
+}
+.innerheading2 {
+  font-size: 27px;
+  font-weight: 600;
+}
+.businessTopSec {
+  background: #f7f7f7;
+}
+.businessTopSecInn {
+  padding: 0px 100px;
+}
+.businessTopSecInnTxt {
+  padding-right: 60px;
+}
+.businessTopSecImg {
+  padding-top: 40px;
+}
+.businessTopSecImg img {
+  margin: 0 auto -17px;
+  display: block;
+}
+.businessTopSec p,
+.businessMidSec p,
+.businessBottomSec p {
+  color: #777;
+}
+.businessMidSecInnTxt {
+  padding-left: 60px;
+}
+.businessBotSec {
+  background: #f7f7f7;
+}
+.businessBotSecTxt {
+  padding: 60px;
+}
+.businessBotSecTxt p {
+  color: #777;
+}
+.businessBotSecImg {
+  height: 300px;
+}

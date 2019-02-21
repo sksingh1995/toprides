@@ -8,6 +8,10 @@ const routes: Routes = [
   { path: "coming-soon", component: ComingSoonComponent },
   { path: "about", loadChildren: "./modules/about/about.module#AboutModule" },
   {
+    path: "business",
+    loadChildren: "./modules/business/business.module#BusinessModule"
+  },
+  {
     path: "career",
     loadChildren: "./modules/career/career.module#CareerModule"
   },
