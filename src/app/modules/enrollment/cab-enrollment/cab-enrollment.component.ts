@@ -3,26 +3,23 @@ import { HttpService } from "../../../services/http.service";
 import { NgForm, NgModel } from "@angular/forms";
 
 @Component({
-  selector: "toprides-new-enrollment",
-  templateUrl: "./new-enrollment.component.html",
-  styleUrls: ["./new-enrollment.component.css"]
+  selector: "cab-enrollment",
+  templateUrl: "./cab-enrollment.component.html",
+  styleUrls: ["./cab-enrollment.component.css"]
 })
-export class NewEnrollmentComponent {
-  private postURL = "http://52.66.235.25/toprides-server/sendmail.php";
+export class CabEnrollmentComponent {
+  private postURL = "http://52.66.235.25/toprides-server/cab.php";
   public submitting: Boolean = false;
   public enrolled: Boolean = false;
   public files: Array<any> = [];
-  public driverDocs: Array<any> = [];
   public avatar: string = "";
+  public uploadedFiles: any = "";
 
   constructor(private http: HttpService) {}
 
-  handleFileChange(e, type = "car_docs") {
-    if (type == "car_docs") {
-      this.files = e.target.files;
-    } else {
-      this.driverDocs = e.target.files;
-    }
+  handleFileChange(e) {
+    this.files = e.target.files;
+    this.uploadedFiles = this.files.length;
   }
 
   handleAvatarUpload(e) {
@@ -53,14 +50,6 @@ export class NewEnrollmentComponent {
       formdata.append("attachments[]", this.files[i], this.files[i].name);
     }
 
-    for (let i = 0; i < this.driverDocs.length; i++) {
-      formdata.append(
-        "attachments[]",
-        this.driverDocs[i],
-        this.driverDocs[i].name
-      );
-    }
-
     this.http
       .post(this.postURL, formdata)
       .then(res => {
@@ -69,7 +58,6 @@ export class NewEnrollmentComponent {
         this.enrolled = true;
         this.avatar = "";
         this.files = [];
-        this.driverDocs = [];
         setTimeout(() => {
           this.enrolled = false;
         }, 3000);

@@ -1,5 +1,5 @@
 <section class="innerbanner3">
-  <h1 class="w420">Enrollment For - Car Owner</h1>
+  <h1 class="w420">Enrollment For - Cab</h1>
 </section>
 
 <section class="p-60 inn_bg">
@@ -15,82 +15,66 @@
           <div class="col-lg-6">
             <div class="profile_info pull-right">
               <img *ngIf="avatar" [src]="avatar" class="img-responsive" />
-              <img *ngIf="!avatar" src="assets/images/taxi.png" class="img-responsive" />
+              <img
+                *ngIf="!avatar"
+                src="assets/images/taxi.png"
+                class="img-responsive"
+              />
               <i class="fas fa-camera fa_edit"></i>
-              <input type="file" class="upload" (change)="handleAvatarUpload($event)" accept="image/*" />
-              <textarea style="display: none;"
-              name="avatar"
-              ngModel [(ngModel)]="avatar"></textarea>
-              
+              <input
+                type="file"
+                class="upload"
+                (change)="handleAvatarUpload($event)"
+                accept="image/*"
+              />
+              <textarea
+                style="display: none;"
+                name="avatar"
+                ngModel
+                [(ngModel)]="avatar"
+              ></textarea>
             </div>
-            <p class="error text-right mt-4" *ngIf="form.submitted && avatar == ''">Please upload your photo</p>
+            <p
+              class="error text-right mt-4"
+              *ngIf="form.submitted && avatar == ''"
+            >
+              Please upload your photo
+            </p>
           </div>
         </div>
         <div class="row mt-5 form-group">
           <div class="col-12 col-lg-6">
-            <label>First Name</label>
+            <label>Name</label>
             <input
               type="text"
               class="form-control"
-              name="fname"
-              #fname="ngModel"
+              name="name"
+              #name="ngModel"
               ngModel
               required
             />
-            <span class="error" *ngIf="form.submitted && fname.errors?.required"
-              >First name is required.</span
+            <span class="error" *ngIf="form.submitted && name.errors?.required"
+              >Name is required.</span
             >
           </div>
           <div class="col-12 col-lg-6">
-            <label>Last Name</label>
+            <label>Address</label>
             <input
               type="text"
               class="form-control"
-              name="lname"
-              #lname="ngModel"
-              ngModel
-              required
-            />
-            <span class="error" *ngIf="form.submitted && lname.errors?.required"
-              >Last name is required.</span
-            >
-          </div>
-        </div>
-        <div class="row form-group">
-          <div class="col-12 col-lg-6">
-            <label>Correspondence Address</label>
-            <input
-              type="text"
-              class="form-control"
-              name="caddress"
-              #caddress="ngModel"
+              name="address"
+              #address="ngModel"
               ngModel
               required
             />
             <span
               class="error"
-              *ngIf="form.submitted && caddress.errors?.required"
-              >Please enter your correspondence address.</span
+              *ngIf="form.submitted && address.errors?.required"
+              >Please enter your address.</span
             >
           </div>
+        </div>
 
-          <div class="col-12 col-lg-6">
-            <label>Permanent Address</label>
-            <input
-              type="text"
-              class="form-control"
-              name="paddress"
-              #paddress="ngModel"
-              ngModel
-              required
-            />
-            <span
-              class="error"
-              *ngIf="form.submitted && paddress.errors?.required"
-              >Please enter your permanent address.</span
-            >
-          </div>
-        </div>
         <div class="row">
           <div class="col-12 col-lg-6">
             <label>Phone</label>
@@ -244,7 +228,6 @@
             >
           </div>
         </div>
-
         <div class="row mt-4">
           <div class="col-lg-4">
             <label class="chckbx_custom">
@@ -279,7 +262,6 @@
       <hr />
       <div class="cc_box">
         <h3 class="innerheading2">Tick on the Documents Enclosed</h3>
-        
         <div class="row mt-4">
           <div class="col-12 col-lg-4">
             <label class="chckbx_custom">
@@ -333,140 +315,34 @@
             </label>
 
             <div class="p-rel">
-              <button type="submit" class="btn btn-dark">Upload your documents</button>
+              <button type="submit" class="btn btn-dark">
+                Upload your documents
+              </button>
               <input
-              type="file"
-              name="attachments[]"
-              multiple
-              ngModel
-              #attachment="ngModel"
-              accept="image/x-png,image/jpeg"
-              (change)="handleFileChange($event)"
-              class="file"
-            />
-            </div>  
-            <span
-            class="error"
-            *ngIf="form.submitted && files.length == 0"
-            >Please upload your documents.</span
-          >
-          </div>
-        </div>
-      </div>
-
-      <hr />
-      <div class="cc_box">
-        <h3 class="innerheading2">Driver Related Detail</h3>
-        <div class="row  form-group mt-4">
-          <div class="col-12 col-lg-6">
-            <label>Driver Name</label>
-            <input
-              type="text"
-              class="form-control"
-              name="driver_name"
-              #dname="ngModel"
-              ngModel
-              required
-            />
-            <span class="error" *ngIf="form.submitted && dname.errors?.required"
-              >Driver Name is required.</span
-            >
-          </div>
-          <div class="col-12 col-lg-6">
-            <label>Father Name</label>
-            <input
-              type="text"
-              class="form-control"
-              name="father_name"
-              #fatherName="ngModel"
-              ngModel
-              required
-            />
-            <span
-              class="error"
-              *ngIf="form.submitted && fatherName.errors?.required"
-              >Father Name is required.</span
-            >
-          </div>
-        </div>
-        <div class="row mt-4">
-          <div class="col-12 col-lg-4">
-            <label class="chckbx_custom">
-              <span class="chk_txt">Address proof (Local & Permanent)</span>
-              <input type="checkbox" name="driver_address_proof" ngModel value="1" />
-              <span class="checkmark"></span>
-            </label>
-            <label class="chckbx_custom">
-              <span class="chk_txt">Voter Id</span>
-              <input type="checkbox" name="driver_voter_id" ngModel value="1" />
-              <span class="checkmark"></span>
-            </label>
-            <label class="chckbx_custom">
-              <span class="chk_txt">Aadhar Card</span>
-              <input type="checkbox" name="driver_aadhar_card" ngModel value="1" />
-              <span class="checkmark"></span>
-            </label>
-          </div>
-          <div class="col-12 col-lg-4">
-            <label class="chckbx_custom">
-              <span class="chk_txt">Bank Account</span>
-              <input type="checkbox" name="driver_bank_account" ngModel value="1" />
-              <span class="checkmark"></span>
-            </label>
-            <label class="chckbx_custom">
-              <span class="chk_txt">PAN Card</span>
-              <input type="checkbox" name="driver_pan_card" ngModel value="1" />
-              <span class="checkmark"></span>
-            </label>
-            <label class="chckbx_custom">
-              <span class="chk_txt">Valid Commercial License</span>
-              <input type="checkbox" name="driver_license" ngModel value="1" />
-              <span class="checkmark"></span>
-            </label>
-          </div>
-
-          <div class="col-12 col-lg-4">
-            <label class="chckbx_custom">
-              <span class="chk_txt">Medical Certificate</span>
-              <input type="checkbox" name="driver_medical_cetification" ngModel value="1" />
-              <span class="checkmark"></span>
-            </label>
-
-            <label class="chckbx_custom">
-              <span class="chk_txt">Other</span>
-              <input type="checkbox" name="other" ngModel value="1" />
-              <span class="checkmark"></span>
-            </label>
-
-            <div class="p-rel">
-              <button class="btn btn-dark">Upload your documents</button>
-              <input
-              type="file"
-              name="driver_docs[]"
-              multiple
-              ngModel
-              accept="image/x-png,image/jpeg"
-              (change)="handleFileChange($event,'dd')"
-              class="file"
-            />
+                type="file"
+                name="attachments[]"
+                multiple
+                ngModel
+                #attachment="ngModel"
+                accept="image/x-png,image/jpeg"
+                (change)="handleFileChange($event)"
+                class="file"
+              />
             </div>
-            <span
-            class="error"
-            *ngIf="form.submitted && driverDocs.length == 0"
-            >Please upload your documents.</span
-          >
+            <span class="error" *ngIf="form.submitted && files.length == 0"
+              >Please upload your documents.</span
+            >
           </div>
         </div>
-
-      <input type="hidden" name="submitted" ngModel value="1" />
-      <div class="row text-center mt-5">
-        <button [disabled]="submitting" class="btn-dark btn m-auto dark_ovr">
-          {{ submitting ? "Please Wait . . ." : "Submit" }}
-        </button>
-      </div>
-      <div *ngIf="enrolled" class="mt-2 alert alert-success text-center">
-        Enrollment Successfull
-      </div>
+        <input type="hidden" name="submitted" ngModel value="1" />
+        <div class="row text-center mt-5">
+          <button [disabled]="submitting" class="btn-dark btn m-auto dark_ovr">
+            {{ submitting ? "Please Wait . . ." : "Submit" }}
+          </button>
+        </div>
+        <div *ngIf="enrolled" class="mt-2 alert alert-success text-center">
+          Enrollment Successfull
+        </div>
       </div>
     </form>
   </div>

@@ -1,0 +1,297 @@
+<section class="innerbanner3">
+  <h1 class="w420">Enrollment For - Driver</h1>
+</section>
+
+<section class="p-60 inn_bg">
+  <div class="container">
+    <form #form="ngForm" (submit)="form.valid && onNewRegistration(form)">
+      <div class="cc_box">
+        <div class="row justify-content-between align-items-center">
+          <div class="col-lg-6 mr-auto">
+            <h3 class="innerheading2">
+              General Info
+            </h3>
+          </div>
+          <div class="col-lg-6">
+            <div class="profile_info pull-right">
+              <img *ngIf="avatar" [src]="avatar" class="img-responsive" />
+              <img *ngIf="!avatar" src="assets/images/profile_pic.png" class="img-responsive" />
+              <i class="fas fa-camera fa_edit"></i>
+              <input
+                type="file"
+                class="upload"
+                (change)="handleAvatarUpload($event)" accept="image/*"
+              />
+              <textarea
+                style="display: none;"
+                name="avatar"
+                ngModel
+                [(ngModel)]="avatar"
+              ></textarea>
+            </div>
+            <p
+              class="error text-right mt-4"
+              *ngIf="form.submitted && avatar == ''"
+            >
+              Please upload your photo
+            </p>
+          </div>
+        </div>
+        <div class="row mt-5 form-group">
+          <div class="col-12 col-lg-6">
+            <label>First Name</label>
+            <input
+              type="text"
+              class="form-control"
+              name="fname"
+              #fname="ngModel"
+              ngModel
+              required
+            />
+            <span class="error" *ngIf="form.submitted && fname.errors?.required"
+              >First name is required.</span
+            >
+          </div>
+          <div class="col-12 col-lg-6">
+            <label>Last Name</label>
+            <input
+              type="text"
+              class="form-control"
+              name="lname"
+              #lname="ngModel"
+              ngModel
+              required
+            />
+            <span class="error" *ngIf="form.submitted && lname.errors?.required"
+              >Last name is required.</span
+            >
+          </div>
+        </div>
+        <div class="row form-group">
+          <div class="col-12 col-lg-12">
+            <label>Address</label>
+            <input
+              type="text"
+              class="form-control"
+              name="address"
+              #address="ngModel"
+              ngModel
+              required
+            />
+            <span
+              class="error"
+              *ngIf="form.submitted && address.errors?.required"
+              >Please enter your address.</span
+            >
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12 col-lg-6">
+            <label>Phone</label>
+            <input
+              type="text"
+              class="form-control"
+              name="phone"
+              #phone="ngModel"
+              ngModel
+              required
+              number
+              maxlength="10"
+              minlength="10"
+            />
+            <span class="error" *ngIf="form.submitted && phone.errors?.required"
+              >Phone number is required.</span
+            >
+            <span
+              class="error"
+              *ngIf="
+                form.submitted &&
+                (phone.errors?.number ||
+                  phone.errors?.maxlength ||
+                  phone.errors?.minlength)
+              "
+              >Please enter a valid phone number.</span
+            >
+          </div>
+          <div class="col-12 col-lg-6">
+            <label>Email</label>
+            <input
+              type="text"
+              class="form-control"
+              name="email"
+              #email="ngModel"
+              ngModel
+              required
+              ngvemail
+            />
+            <span class="error" *ngIf="form.submitted && email.errors?.required"
+              >Email is required.</span
+            >
+            <span class="error" *ngIf="form.submitted && email.errors?.email"
+              >Please enter a valid email address.</span
+            >
+          </div>
+        </div>
+      </div>
+      <hr />
+      <div class="cc_box">
+        <h3 class="innerheading2">Tick on the Documents Enclosed</h3>
+
+        <div class="row mt-4">
+          <div class="col-12 col-lg-6">
+            <label class="chckbx_custom">
+              <span class="chk_txt">Address proof (Local & Permanent)</span>
+              <input type="checkbox" name="address_proof" ngModel value="1" />
+              <span class="checkmark"></span>
+            </label>
+            <label class="chckbx_custom">
+              <span class="chk_txt">Voter Id</span>
+              <input type="checkbox" name="voter_id" ngModel value="1" />
+              <span class="checkmark"></span>
+            </label>
+            <label class="chckbx_custom">
+              <span class="chk_txt">Aadhar Card</span>
+              <input type="checkbox" name="aadhar_card" ngModel value="1" />
+              <span class="checkmark"></span>
+            </label>
+
+            <label class="chckbx_custom">
+              <span class="chk_txt">Medical Certificate</span>
+              <input type="checkbox" name="medical_certificate" ngModel value="1" />
+              <span class="checkmark"></span>
+            </label>
+          </div>
+          <div class="col-12 col-lg-6">
+            <label class="chckbx_custom">
+              <span class="chk_txt">Bank Account</span>
+              <input type="checkbox" name="bank_account" ngModel value="1" />
+              <span class="checkmark"></span>
+            </label>
+            <label class="chckbx_custom">
+              <span class="chk_txt">PAN Card</span>
+              <input type="checkbox" name="pan_card" ngModel value="1" />
+              <span class="checkmark"></span>
+            </label>
+            <label class="chckbx_custom">
+              <span class="chk_txt">Valid Commercial License</span>
+              <input type="checkbox" name="license" ngModel value="1" />
+              <span class="checkmark"></span>
+            </label>
+            <label class="chckbx_custom">
+              <span class="chk_txt">Other</span>
+              <input type="checkbox" name="other" ngModel value="1" />
+              <span class="checkmark"></span>
+            </label>
+            
+          </div>
+
+          <div class="col-12 text-center">
+            <div class="p-rel">
+              <button type="submit" class="btn btn-dark">Upload your documents</button>
+              <input
+              type="file"
+              name="attachments[]"
+              multiple
+              ngModel
+              accept="image/x-png,image/jpeg"
+              (change)="handleFileChange($event)"
+              class="file"
+            />
+            </div>
+            <span
+            class="error"
+            *ngIf="form.submitted && files.length == 0"
+            >Please upload your documents.</span
+          >
+          </div>
+        </div>
+      </div>
+      <hr />
+      <div class="cc_box">
+        <h3 class="innerheading2">Other Detail</h3>
+        <div class="row mt-4 form-group">
+          <div class="col-12 col-lg-6">
+            <label>Father Name.</label>
+            <input
+              type="text"
+              class="form-control"
+              name="father_name"
+              #fatherName="ngModel"
+              ngModel
+              required
+            />
+            <span class="error" *ngIf="form.submitted && fatherName.errors?.required"
+              >Father Name is required.</span
+            >
+          </div>
+          <div class="col-12 col-lg-6">
+            <label>Education</label>
+            <select name="education" class="form-control" ngModel #edu="ngModel" required>
+              <option value="">Select</option>
+              <option value="10th">10th</option>
+              <option value="12th">12th</option>
+              <option value="graduate">Graduate</option>
+              <option value="post graduate">Post Graduate</option>
+            </select>
+            <span
+              class="error"
+              *ngIf="form.submitted && edu.errors?.required"
+              >Please select your education.</span
+            >
+          </div>
+        </div>
+        <div class="row form-group">
+          <div class="col-12 col-lg-6">
+            <label>Language Known</label>
+            <select name="language" class="form-control" ngModel #lang="ngModel" multiple required>
+              <option value="">Select</option>
+              <option value="hindi">Hindi</option>
+              <option value="english">Engish</option>
+            </select>
+            <span
+              class="error"
+              *ngIf="form.submitted && lang.errors?.required"
+              >Please select at least one language.</span
+            >
+          </div>
+          <div class="col-12 col-lg-6">
+            <label>Marital Status</label>
+            <select name="marital" class="form-control" ngModel #marital="ngModel" required>
+              <option value="">Select</option>
+              <option value="married">Married</option>
+              <option value="unmarried">Unmarried</option>
+            </select>
+            <span
+              class="error"
+              *ngIf="form.submitted && marital.errors?.required"
+              >Please select your marital status.</span
+            >
+          </div>
+        </div>
+        <div class="row form-group">
+          <div class="col-12 col-lg-6">
+            <label>Nationality</label>
+            <select name="nationality" class="form-control" ngModel #nationality="ngModel" required>
+              <option value="">Select</option>
+              <option value="indian">Indian</option>
+              <option value="usa">USA</option>
+              <option value="au">Australia</option>
+            </select>
+            <span class="error" *ngIf="form.submitted && nationality.errors?.required"
+              >Please select your nationality.</span
+            >
+          </div>
+        </div>
+        <input type="hidden" name="submitted" ngModel value="1" />
+        <div class="row text-center mt-5">
+          <button [disabled]="submitting" class="btn-dark btn m-auto dark_ovr">
+            {{ submitting ? "Please Wait . . ." : "Submit" }}
+          </button>
+        </div>
+        <div *ngIf="enrolled" class="mt-2 alert alert-success text-center">
+          Enrollment Successfull
+        </div>
+      </div>
+    </form>
+  </div>
+</section>
