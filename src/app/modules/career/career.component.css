@@ -99,3 +99,10 @@
     margin-bottom: 15px;
   }
 }
+
+
+
+.fa-square-full{    color: #e6c907;
+    transform: rotate(43deg);
+    font-size: 15px;
+    margin-right: 5px;}

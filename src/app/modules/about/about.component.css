@@ -4,3 +4,11 @@
     left: 50%;
     -webkit-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);}
+
+.commt{position: relative;padding-left:30px;}
+
+.commt .fas{position: absolute;top:9px;left:0;color: #e6c907;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+    font-size: 15px;
+    margin-right: 5px;}

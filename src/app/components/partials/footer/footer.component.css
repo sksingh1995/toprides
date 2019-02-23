@@ -28,5 +28,7 @@ footer{background-color: #000}
     
 }
 
-.footer_links li a{color: #fff!important}
+.footer_links li a{color: #fff;font-weight:400;}
 .br-top{border-top:1px solid #3d3d3d;}
+.nfooter_links li a:hover{color: #fede03;}
+.footer_links li a:hover{color: #fede03;}
