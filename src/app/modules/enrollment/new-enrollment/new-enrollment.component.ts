@@ -8,7 +8,6 @@ import { NgForm, NgModel } from "@angular/forms";
   styleUrls: ["./new-enrollment.component.css"]
 })
 export class NewEnrollmentComponent {
-  private postURL = "http://52.66.235.25/toprides-server/sendmail.php";
   public submitting: Boolean = false;
   public enrolled: Boolean = false;
   public files: Array<any> = [];
@@ -62,7 +61,7 @@ export class NewEnrollmentComponent {
     }
 
     this.http
-      .post(this.postURL, formdata)
+      .post("sendmail.php", formdata)
       .then(res => {
         this.submitting = false;
         form.resetForm();
