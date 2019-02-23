@@ -8,7 +8,6 @@ import { NgForm, NgModel } from "@angular/forms";
   styleUrls: ["./cab-enrollment.component.css"]
 })
 export class CabEnrollmentComponent {
-  private postURL = "http://52.66.235.25/toprides-server/cab.php";
   public submitting: Boolean = false;
   public enrolled: Boolean = false;
   public files: Array<any> = [];
@@ -51,7 +50,7 @@ export class CabEnrollmentComponent {
     }
 
     this.http
-      .post(this.postURL, formdata)
+      .post("cab.php", formdata)
       .then(res => {
         this.submitting = false;
         form.resetForm();

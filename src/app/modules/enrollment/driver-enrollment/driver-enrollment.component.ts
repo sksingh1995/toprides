@@ -8,7 +8,6 @@ import { NgForm, NgModel } from "@angular/forms";
   styleUrls: ["./driver-enrollment.component.css"]
 })
 export class DriverEnrollmentComponent {
-  private postURL = "http://52.66.235.25/toprides-server/driver.php";
   public submitting: Boolean = false;
   public enrolled: Boolean = false;
   public files: Array<any> = [];
@@ -51,7 +50,7 @@ export class DriverEnrollmentComponent {
     }
 
     this.http
-      .post(this.postURL, formdata)
+      .post("driver.php", formdata)
       .then(res => {
         this.submitting = false;
         form.resetForm();
