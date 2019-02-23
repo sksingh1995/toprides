@@ -1,3 +1,15 @@
+
+.innerbanner3 {
+  background-image: url(/assets/images/enrollment.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  background-position: 100% 100%;
+  position: relative;
+  height: 374px;
+}
+
+
 .img_postn {
   position: absolute;
   top: 50%;

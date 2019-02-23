@@ -46,3 +46,13 @@
   left: 50%;
   transform: translate(-50%, -50%);
 }
+
+.innerbanner2 {
+  background-image: url(/assets/images/driver.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  background-position: 100% 100%;
+  position: relative;
+  height: 374px;
+}

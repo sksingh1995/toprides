@@ -226,7 +226,7 @@ ul {
 /********* banner css ****************/
 
 
-.banner{background-image:url(/assets/images/homebanner.jpg);background-repeat:no-repeat; background-size:cover;height:700px;position:relative;background-position:100% 100% }
+.banner{background-image:url(/assets/images/new_banner.jpg);background-repeat:no-repeat; background-size:cover;height:500px;position:relative;}
 .containerovr {    position: absolute; top: 0; left: 0; right: 0; bottom: 0; margin: auto; height: 310px;
 	text-align: center;}
 	.bannertxt h1{color: #fff;
@@ -239,15 +239,7 @@ ul {
 	.btn_label{color: #fff; display: block; line-height: 18px; margin-bottom: 8px; font-weight: 600;text-align:left;    font-size: 18px; letter-spacing: .5px;} 
 	.btn_area{background: rgba(0,0,0,.5);max-width:762px;padding:40px;}
 
-.banner {
-  background-image: url(/assets/images/homebanner.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 700px;
-  position: relative;
-  background-position: 100% 100%;
 
-}
 .bannertxt h1 {
   color: #fff;
   font-size: 40px;
@@ -382,15 +374,7 @@ footer {
   position: relative;
   height: 374px;
 }
-.innerbanner2 {
-  background-image: url(/assets/images/innerbanner2.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  position: relative;
-  background-position: 100% 100%;
-  position: relative;
-  height: 374px;
-}
+
 .innerbanner h1 {
   position: absolute;
   left: 0;
