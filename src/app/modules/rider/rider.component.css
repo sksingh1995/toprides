@@ -67,3 +67,22 @@
   position: relative;
   height: 374px;
 }
+
+
+
+@media screen and (max-width: 767px){
+
+
+
+  .inn_info h1{    font-size: 26px;
+    text-align: center;}
+    .res_bn .img-responsive{width:80px;}
+    .innerbanner2{height: 229px;}
+    .hidden-xs{display: none}
+    .inner_bgg{padding-top: 78px; background-position: -11px -117px;margin-top:0;}
+    .form-group{margin-bottom:20px;}
+
+
+
+
+}

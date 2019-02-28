@@ -1,4 +1,5 @@
 import { Component, ViewChild } from "@angular/core";
+import { Title } from "@angular/platform-browser";
 import { HttpService } from "../../../services/http.service";
 import { NgForm, NgModel } from "@angular/forms";
 
@@ -14,7 +15,9 @@ export class NewEnrollmentComponent {
   public driverDocs: Array<any> = [];
   public avatar: string = "";
 
-  constructor(private http: HttpService) {}
+  constructor(private http: HttpService,private title: Title) {
+  this.title.setTitle(`New Enrollment`);
+  }
 
   handleFileChange(e, type = "car_docs") {
     if (type == "car_docs") {

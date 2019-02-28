@@ -1,6 +1,7 @@
 import { Component, ViewChild } from "@angular/core";
 import { HttpService } from "../../../services/http.service";
 import { NgForm, NgModel } from "@angular/forms";
+import { Title } from "@angular/platform-browser";
 
 @Component({
   selector: "cab-enrollment",
@@ -14,7 +15,9 @@ export class CabEnrollmentComponent {
   public avatar: string = "";
   public uploadedFiles: any = "";
 
-  constructor(private http: HttpService) {}
+  constructor(private http: HttpService,private title: Title) {
+  this.title.setTitle(`Enrollment For - Cab`);
+  }
 
   handleFileChange(e) {
     this.files = e.target.files;

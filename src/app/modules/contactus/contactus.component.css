@@ -62,15 +62,7 @@
   -o-box-shadow: 7px 10px 20px #e5e5e5, -5px 3px 27px #e5e5e5;
   background: #fff;
 }
-.conatctformdiv:after {
-  position: absolute;
-  right: 100%;
-  content: "";
-  top: 0;
-  border-width: 15px 15px 15px 0;
-  border-style: solid;
-  border-color: transparent #eee transparent transparent;
-}
+
 .contactsection_bootom {
   margin-bottom: -200px;
 }
@@ -123,4 +115,14 @@
 
 span.error {
   color: red;
+}
+
+
+
+@media screen and(max-width:767px){
+
+
+
+
+
 }

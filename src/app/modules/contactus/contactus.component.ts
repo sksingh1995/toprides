@@ -1,5 +1,6 @@
 import { Component } from "@angular/core";
 import { NgForm } from "@angular/forms";
+import { Title } from "@angular/platform-browser";
 import { HttpService } from "../../services/http.service";
 
 @Component({
@@ -11,7 +12,9 @@ export class ContactUsComponent {
   submitting: boolean = false;
   submitted: boolean = false;
 
-  constructor(private http: HttpService) {}
+  constructor(private http: HttpService,private title: Title) {
+    this.title.setTitle(`Contact Us`);
+  }
 
   onSubmit(form: NgForm) {
     this.submitting = true;

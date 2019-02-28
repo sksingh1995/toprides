@@ -1,0 +1,20 @@
+@media screen and (max-width:767px){
+
+.container h3{    font-size: 22px;
+    margin-bottom: 1px;}
+
+ .sec3{    padding-top: 15px;}
+
+.sec4{padding-top: 15px;
+    padding-bottom: 15px;}
+
+.sec4 img{width:120px;}
+.res_mt .mt-5{margin-top:20px!important;}
+.owl-nav .owl-next{display: none!important}
+
+
+
+}
+
+
+.banner_img{position: absolute;bottom:0;right:0;}

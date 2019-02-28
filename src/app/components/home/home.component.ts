@@ -27,7 +27,7 @@ export class HomeComponent implements OnInit {
       content: `Book a car from anywhere in 3 simple clicks`
     });
 
-    this.title.setTitle(`Book a car`);
+    this.title.setTitle(`ToprideCabs – Book Your Ride `);
 
     for (let i = 0; i < 10; i++) {
       this.carouselData.push(i);

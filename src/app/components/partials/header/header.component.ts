@@ -3,6 +3,7 @@ import { LoginComponent } from "../../login/login.component";
 import { MatDialog } from "@angular/material/dialog";
 import { AuthService } from "../../../services/auth.service";
 import { isPlatformBrowser } from "@angular/common";
+import { Router, NavigationEnd } from '@angular/router';
 
 @Component({
   selector: "toprides-header",
@@ -12,6 +13,7 @@ import { isPlatformBrowser } from "@angular/common";
 export class HeaderComponent implements OnInit {
   public isLoggedIn: Boolean = false;
   public isBrowser: Boolean = false;
+  public isLeft0: Boolean = false;
   public pagescrolled: Boolean = false;
   @Input("isHomePage") isHomePage: Boolean;
   public user: any;
@@ -19,12 +21,20 @@ export class HeaderComponent implements OnInit {
   constructor(
     private dialog: MatDialog,
     private as: AuthService,
+    private router: Router,
     @Inject(PLATFORM_ID) private platformId: Object
   ) {
     this.isBrowser = isPlatformBrowser(platformId);
   }
 
   ngOnInit() {
+      this.router.events
+       .subscribe((event) => {
+          if(event instanceof NavigationEnd){
+            this.isLeft0 = false;
+          }
+       });
+
     this.as.isLoggedIn.subscribe(data => {
       this.isLoggedIn = data.loggedIn;
       this.user = data.user;
