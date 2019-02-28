@@ -68,20 +68,37 @@
           </div>
         </div>
         <div class="row form-group">
-          <div class="col-12 col-lg-12">
-            <label>Address</label>
+          <div class="col-12 col-lg-6">
+            <label>Correspondence Address</label>
             <input
               type="text"
               class="form-control"
-              name="address"
-              #address="ngModel"
+              name="caddress"
+              #caddress="ngModel"
               ngModel
               required
             />
             <span
               class="error"
-              *ngIf="form.submitted && address.errors?.required"
-              >Please enter your address.</span
+              *ngIf="form.submitted && caddress.errors?.required"
+              >Please enter your correspondence address.</span
+            >
+          </div>
+
+          <div class="col-12 col-lg-6">
+            <label>Permanent Address</label>
+            <input
+              type="text"
+              class="form-control"
+              name="paddress"
+              #paddress="ngModel"
+              ngModel
+              required
+            />
+            <span
+              class="error"
+              *ngIf="form.submitted && paddress.errors?.required"
+              >Please enter your permanent address.</span
             >
           </div>
         </div>
