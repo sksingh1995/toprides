@@ -58,25 +58,6 @@
             >
           </div>
           <div class="col-12 col-lg-6">
-            <label>Address</label>
-            <input
-              type="text"
-              class="form-control"
-              name="address"
-              #address="ngModel"
-              ngModel
-              required
-            />
-            <span
-              class="error"
-              *ngIf="form.submitted && address.errors?.required"
-              >Please enter your address.</span
-            >
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="col-12 col-lg-6">
             <label>Phone</label>
             <input
               type="text"
@@ -103,6 +84,9 @@
               >Please enter a valid phone number.</span
             >
           </div>
+        </div>
+
+        <div class="row form-group">
           <div class="col-12 col-lg-6">
             <label>Email</label>
             <input
@@ -119,6 +103,42 @@
             >
             <span class="error" *ngIf="form.submitted && email.errors?.email"
               >Please enter a valid email address.</span
+            >
+          </div>
+
+          <div class="col-12 col-lg-6">
+            <label>Correspondence Address</label>
+            <input
+              type="text"
+              class="form-control"
+              name="caddress"
+              #caddress="ngModel"
+              ngModel
+              required
+            />
+            <span
+              class="error"
+              *ngIf="form.submitted && caddress.errors?.required"
+              >Please enter your correspondence address.</span
+            >
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-12 col-lg-12">
+            <label>Permanent Address</label>
+            <input
+              type="text"
+              class="form-control"
+              name="paddress"
+              #paddress="ngModel"
+              ngModel
+              required
+            />
+            <span
+              class="error"
+              *ngIf="form.submitted && paddress.errors?.required"
+              >Please enter your permanent address.</span
             >
           </div>
         </div>
@@ -228,6 +248,48 @@
             >
           </div>
         </div>
+
+        <div class="row form-group">
+          <div class="col-12 col-lg-6">
+            <label>Insurance Policy Date</label>
+            <input
+              type="text"
+              class="form-control"
+              name="ipd"
+              #ipd="ngModel"
+              ngModel
+              placeholder="Choose a date"
+              [matDatepicker]="ipDatePicker"
+              required
+              (focus)="ipDatePicker.open()"
+            />
+            <mat-datepicker #ipDatePicker></mat-datepicker>
+            <span class="error" *ngIf="form.submitted && ipd.errors?.required"
+              >Please select insurance policy date.</span
+            >
+          </div>
+          <div class="col-12 col-lg-6">
+            <label>Insurance Policy Due Date</label>
+            <input
+              type="text"
+              class="form-control"
+              name="ipdd"
+              ngModel
+              placeholder="Choose a date"
+              #ipdd="ngModel"
+              [matDatepicker]="ipdDatePicker"
+              required
+              (focus)="ipdDatePicker.open()"
+            />
+            <mat-datepicker #ipdDatePicker></mat-datepicker>
+            <span
+              class="error"
+              *ngIf="form.submitted && ipdd.errors?.required"
+              >Please select insurance policy due date.</span
+            >
+          </div>
+        </div>
+
         <div class="row mt-4">
           <div class="col-lg-4">
             <label class="chckbx_custom">

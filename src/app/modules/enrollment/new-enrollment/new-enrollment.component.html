@@ -245,6 +245,47 @@
           </div>
         </div>
 
+        <div class="row form-group">
+          <div class="col-12 col-lg-6">
+            <label>Insurance Policy Date</label>
+            <input
+              type="text"
+              class="form-control"
+              name="ipd"
+              #ipd="ngModel"
+              ngModel
+              placeholder="Choose a date"
+              [matDatepicker]="ipDatePicker"
+              required
+              (focus)="ipDatePicker.open()"
+            />
+            <mat-datepicker #ipDatePicker></mat-datepicker>
+            <span class="error" *ngIf="form.submitted && ipd.errors?.required"
+              >Please select insurance policy date.</span
+            >
+          </div>
+          <div class="col-12 col-lg-6">
+            <label>Insurance Policy Due Date</label>
+            <input
+              type="text"
+              class="form-control"
+              name="ipdd"
+              ngModel
+              placeholder="Choose a date"
+              #ipdd="ngModel"
+              [matDatepicker]="ipdDatePicker"
+              required
+              (focus)="ipdDatePicker.open()"
+            />
+            <mat-datepicker #ipdDatePicker></mat-datepicker>
+            <span
+              class="error"
+              *ngIf="form.submitted && ipdd.errors?.required"
+              >Please select insurance policy due date.</span
+            >
+          </div>
+        </div>
+
         <div class="row mt-4">
           <div class="col-lg-4">
             <label class="chckbx_custom">
