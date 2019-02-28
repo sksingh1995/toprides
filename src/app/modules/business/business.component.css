@@ -52,3 +52,22 @@
   background-position: center center;
   height: 374px;
 }
+
+
+@media screen and (max-width:767px){
+
+
+.innerbanner h1{font-size:26px;}
+.businessTopSecInn{    padding: 0px 0px;
+    padding-top: 17px;}
+.businessTopSec h3, .businessMidSec h3{    font-size: 22px;}
+.businessMidSecInnTxt{padding-left: 15px; }
+.businessBotSecTxt{padding:15px;}
+.innerheading2{margin-bottom: 5px;font-size: 22px;}
+.text-right{    text-align: left!important;
+    padding-top: 0;
+    padding-bottom: 0;}
+
+
+
+}

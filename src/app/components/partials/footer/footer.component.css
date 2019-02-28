@@ -32,3 +32,29 @@ footer{background-color: #000}
 .br-top{border-top:1px solid #3d3d3d;}
 .nfooter_links li a:hover{color: #fede03;}
 .footer_links li a:hover{color: #fede03;}
+
+
+
+
+
+
+@media only screen and (max-width:76px){
+
+.footer_btn:hover{color: #000!important;}
+
+   
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+

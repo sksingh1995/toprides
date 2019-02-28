@@ -13,6 +13,10 @@
 body{font-family: 'Roboto Condensed', sans-serif!important;}
 a:hover{text-decoration: none;}
 ul{list-style-type: none;padding:0;margin:0;}
+a.active-link {
+
+    color: #fede03!important;
+}
 
 a:hover {
   text-decoration: none;
@@ -226,7 +230,7 @@ ul {
 /********* banner css ****************/
 
 
-.banner{background-image:url(/assets/images/new_banner.jpg);background-repeat:no-repeat; background-size:cover;height:500px;position:relative;}
+.banner{background-image:url(/assets/images/new_banner.jpg);background-repeat:no-repeat; background-size:cover;height:700px;position:relative;}
 .containerovr {    position: absolute; top: 0; left: 0; right: 0; bottom: 0; margin: auto; height: 310px;
 	text-align: center;}
 	.bannertxt h1{color: #fff;
@@ -366,7 +370,7 @@ footer {
 /********* about us **********/
 
 .innerbanner {
-  background-image: url(/assets/images/innerbanner.jpg);
+  background-image: url(/assets/images/driver.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
@@ -684,6 +688,7 @@ footer {
   width: 350px;
   height: 50px;
   text-align: center;
+      font-weight: 600;
 }
 .w420 {
   width: 420px !important;
@@ -820,5 +825,121 @@ hr {
   font-size: 20px;
   text-transform: capitalize;
 }
+
+
+
+
+@media screen and (min-width:767px) and (max-width:1500px){
+
+.banner{height:500px; }
+.banner_img{position: absolute!important; bottom: 47px!important; right: 91px!important; }
+
+
+
+}
+
+@media screen and (max-width: 767px){
+
+.inn_info{width: 210px;}
+.innerheading3{font-size: 19px;}
+.innerbanner2{height:229px!important;}
+ footer .container{padding:0px 5px!important;}
+
+
+.footer_bottom_1{position: fixed!important;
+    bottom: 0;
+    z-index: 100;
+    left: 0;
+    background: #fede03;
+    width: 50%;
+    border-radius: 0!important;
+    color: #000!important;
+    text-align: center;
+    border-right: 1px solid #000;
+    border-left:0!important;
+    border-top:0!important;
+    border-bottom:0!important;
+  }
+
+  .innerheading{font-size: 25px;
+    margin-bottom: 0px!important;}
+
+.footer_bottom_2{position: fixed;
+    bottom: 0;
+    z-index: 100;
+    right: 0;
+    background: #fede03;
+    width: 50%;
+    border-radius: 0!important;
+    color: #000!important;
+    text-align: center;
+    border:0!important;
+   }
+   
+.bcm_rider a.active-link {
+    color: #000!important;
+}
+
+.res_munu a.active-link {
+    color: #000!important;
+}
+
+.res_mb{margin-bottom:30px;}
+.ag_bx{    margin-bottom: 20px;}
+
+.owl-theme .owl-nav {display: none!important;}
+.cintacthalf{width:100%!important;}
+.fl{float:none!important;}
+.fr{float:none!important;}
+.contactsection{padding:15px 0!important;}
+  .banner_img{display: none!important}
+  .conatctformdiv{margin-top:15px!important;}
+  .innerbanner{height:154px!important;}
+  .innerbanner h1{    height: 27px;    font-size: 25px;}
+
+
+  .cintactleft{
+    padding-right: 0;
+}
+
+
+  .p-60{padding: 15px 0;}
+  .hidden-xs{display: none}
+  .rmt-20{margin-top:20px;}
+  .rmt-30{margin-top:30px;}
+  .rmb-30{margin-bottom:30px;}
+
+
+  .br_edit{border-left:0!important;border-right:0!important;}
+
+.leftal{left:0!important;}
+.nfooter_links{text-align: left!important}
+
+
+.ftgap2 li a {
+    padding-left: 0;
+    display: inline-block;
+    margin-right: 15px;
+}
+
+
+.social_links li {padding-right: 15px; color: #747474; margin-top: 15px; }
+footer .mt-3{margin-top:0!important;}
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
 
 

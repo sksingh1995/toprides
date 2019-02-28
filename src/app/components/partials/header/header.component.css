@@ -1,0 +1,47 @@
+.mnu_center{position: absolute;
+    bottom: 0;
+    top: 0;
+    right: 0;
+    left: 0;
+    margin: auto;
+    max-width: 585px;
+    width: 100%;
+    height: 26px;}
+
+
+.left_0{left:0!important;}
+.fas{display: none}
+
+
+
+@media screen and (max-width: 767px){
+
+
+.fas{display: block}
+.banner{padding: 77px;height: auto;}
+.logo img{width:120px;}
+.res_munu{    height: 100vh;
+    background: #fede03;
+    width: 230px;
+    margin: 0;
+    padding: 20px;
+    background-color: #fede03;
+        left: -300px
+}
+
+.fas{    position: absolute;
+    top: 12px;
+    right: 12px;
+    font-size: 22px;
+    color: #fede03;}
+
+
+
+
+.hd_menu li a{    color: #000;
+    padding-bottom: 15px;display: block;}
+
+.hd_menu li{float: none}
+
+
+}

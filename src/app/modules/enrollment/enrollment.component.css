@@ -1,3 +1,15 @@
+.inc_b{
+  display: inline-block;vertical-align: middle;
+}
+
+
+.fas{
+    
+    color: #e6c907;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+    font-size: 15px;
+    margin-right: 5px;}
 
 .innerbanner3 {
   background-image: url(/assets/images/enrollment.jpg);
@@ -57,3 +69,28 @@
   left: 50%;
   transform: translate(-50%, -50%);
 }
+
+
+
+
+@media screen and (max-width: 767px){
+
+
+.innerbanner3{height: 130px; 
+}
+
+section{overflow: hidden;}
+.w420{      font-size: 25px;    left: -30px!important;top:10px!important;}
+
+}
+
+
+
+
+
+
+
+
+
+
+
