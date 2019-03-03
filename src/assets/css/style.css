@@ -231,8 +231,7 @@ ul {
 
 
 .banner{background-image:url(/assets/images/new_banner.jpg);background-repeat:no-repeat; background-size:cover;height:700px;position:relative;}
-.containerovr {    position: absolute; top: 0; left: 0; right: 0; bottom: 0; margin: auto; height: 310px;
-	text-align: center;}
+.containerovr {    position: relative;}
 	.bannertxt h1{color: #fff;
     font-size: 45px;
     margin-bottom: 71px;
