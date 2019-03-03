@@ -1,7 +1,7 @@
 footer{background-color: #000}
 .nfooter_links{text-align: center;padding: 20px 0;}
-.nfooter_links li{display: inline-block;width: 50%;    padding-bottom: 5px;
-    padding-top: 5px;}
+.nfooter_links li{    display: inline-block;
+    padding-right: 50px;}
 .nfooter_links li a{color: #fff;}
 .br_edit{border-right: 1px solid #3d3d3d;border-left:1px solid #3d3d3d;}
 .leftal{position: relative;left:-11px;}
