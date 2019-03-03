@@ -120,6 +120,22 @@
           </div>
 
           <div class="applyformrow clearfix">
+            <ngx-recaptcha2
+              #captcha
+              [siteKey]="siteKey"
+              (success)="handleCaptcha($event)"
+              [useGlobalDomain]="true"
+              theme="dark"
+              name="captcha"
+              ngModel
+              required
+            >
+            </ngx-recaptcha2>
+            <span class="error" *ngIf="form.submitted && !captchaSolved"
+              >Please solve the captcha.</span
+            >
+          </div>
+          <div class="applyformrow clearfix">
             <div class="formcol">
               <button
                 type="submit"

@@ -1,5 +1,5 @@
 <div [ngClass]="{ banner: isHomePage }">
-  <header id="main_header"  [ngClass]="{ pagescrolled: pagescrolled }">
+  <header id="main_header" [ngClass]="{ pagescrolled: pagescrolled }">
     <div class="container-fluid">
       <div class="d-flex align-items-center">
         <div class="mr-5">
@@ -8,15 +8,57 @@
           </a>
         </div>
         <div class="mr-auto">
-          <ul class="hd_menu mnu_center res_munu transition" [ngClass]="{left_0:isLeft0}">
-            <li><a routerLinkActive="active-link" routerLink="/driver" class="transtition">Driver</a></li>
-            <li><a routerLinkActive="active-link" routerLink="/rider" class="transtition">Rider</a></li>
-            <li><a routerLinkActive="active-link" routerLink="/coming-soon" class="transtition">Travel Agency</a></li>
-            <li><a routerLinkActive="active-link" routerLink="/business" class="transtition">Business</a></li>
-            <li><a routerLinkActive="active-link" routerLink="/enrollment" class="transtition">Enrollment</a></li>
+          <ul
+            class="hd_menu mnu_center res_munu transition"
+            [ngClass]="{ left_0: isLeft0 }"
+          >
+            <li>
+              <a
+                routerLinkActive="active-link"
+                routerLink="/driver"
+                class="transtition"
+                >Driver</a
+              >
+            </li>
+            <li>
+              <a
+                routerLinkActive="active-link"
+                routerLink="/rider"
+                class="transtition"
+                >Rider</a
+              >
+            </li>
+            <li>
+              <a
+                routerLinkActive="active-link"
+                routerLink="/coming-soon"
+                class="transtition"
+                >Travel Agency</a
+              >
+            </li>
+            <li>
+              <a
+                routerLinkActive="active-link"
+                routerLink="/business"
+                class="transtition"
+                >Business</a
+              >
+            </li>
+            <li>
+              <a
+                routerLinkActive="active-link"
+                routerLink="/enrollment"
+                class="transtition"
+                >Enrollment</a
+              >
+            </li>
           </ul>
           <div>
-            <i class="fas" [ngClass]="{'fa-bars':!isLeft0,'fa-times-circle':isLeft0}" (click)="isLeft0 = !isLeft0"></i>
+            <i
+              class="fas"
+              [ngClass]="{ 'fa-bars': !isLeft0, 'fa-times-circle': isLeft0 }"
+              (click)="isLeft0 = !isLeft0"
+            ></i>
           </div>
         </div>
         <div>

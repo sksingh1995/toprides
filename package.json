@@ -42,6 +42,7 @@
     "angular-in-memory-web-api": "^0.6.0",
     "bootstrap": "^4.2.1",
     "core-js": "^2.5.4",
+    "ngx-captcha": "^6.3.0",
     "ngx-custom-validators": "^7.0.0",
     "ngx-owl-carousel-o": "^1.0.11",
     "rxjs": "^6.3.0",

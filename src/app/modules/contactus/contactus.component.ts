@@ -1,7 +1,9 @@
-import { Component } from "@angular/core";
+import { Component, ViewChild } from "@angular/core";
 import { NgForm } from "@angular/forms";
 import { Title } from "@angular/platform-browser";
 import { HttpService } from "../../services/http.service";
+import { GOOGLE_CAPTCHA_SITE_KEY } from "../../config/const";
+import { ReCaptcha2Component } from "ngx-captcha";
 
 @Component({
   selector: "app-contactus",
@@ -9,11 +11,18 @@ import { HttpService } from "../../services/http.service";
   styleUrls: ["./contactus.component.css"]
 })
 export class ContactUsComponent {
+  @ViewChild("captcha") captcha: ReCaptcha2Component;
+  captchaSolved: boolean = false;
   submitting: boolean = false;
   submitted: boolean = false;
+  siteKey: string = GOOGLE_CAPTCHA_SITE_KEY;
 
-  constructor(private http: HttpService,private title: Title) {
+  constructor(private http: HttpService, private title: Title) {
     this.title.setTitle(`Contact Us`);
+  }
+
+  handleCaptcha(e) {
+    this.captchaSolved = true;
   }
 
   onSubmit(form: NgForm) {
@@ -31,6 +40,8 @@ export class ContactUsComponent {
       .then(res => {
         this.submitting = false;
         this.submitted = true;
+        this.captcha.resetCaptcha();
+        this.captchaSolved = false;
         form.resetForm();
         setTimeout(() => {
           this.submitted = false;
