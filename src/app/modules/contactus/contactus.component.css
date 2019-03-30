@@ -1,5 +1,5 @@
 .contactsection {
-  padding: 70px 0;
+  padding: 40px 0;
 }
 .cintacthalf {
   width: 48%;
@@ -117,12 +117,5 @@ span.error {
   color: red;
 }
 
-
-
-@media screen and(max-width:767px){
-
-
-
-
-
+@media screen and(max-width:767px) {
 }

@@ -3,7 +3,8 @@ import { LoginComponent } from "../../login/login.component";
 import { MatDialog } from "@angular/material/dialog";
 import { AuthService } from "../../../services/auth.service";
 import { isPlatformBrowser } from "@angular/common";
-import { Router, NavigationEnd } from '@angular/router';
+import { Router, NavigationEnd } from "@angular/router";
+import { LoginOtpComponent } from "../../login-otp/login-otp.component";
 
 @Component({
   selector: "toprides-header",
@@ -28,12 +29,11 @@ export class HeaderComponent implements OnInit {
   }
 
   ngOnInit() {
-      this.router.events
-       .subscribe((event) => {
-          if(event instanceof NavigationEnd){
-            this.isLeft0 = false;
-          }
-       });
+    this.router.events.subscribe(event => {
+      if (event instanceof NavigationEnd) {
+        this.isLeft0 = false;
+      }
+    });
 
     this.as.isLoggedIn.subscribe(data => {
       this.isLoggedIn = data.loggedIn;
@@ -50,7 +50,9 @@ export class HeaderComponent implements OnInit {
   }
 
   openLoginPopup() {
-    this.dialog.open(LoginComponent);
+    this.dialog.open(LoginComponent, {
+      disableClose: true
+    });
   }
 
   logout() {

@@ -5,6 +5,7 @@ import { LocalStorageService } from "../../services/dom.service";
 import { LOGGED_IN_USER } from "../../config/const";
 import { Router } from "@angular/router";
 import { AuthService } from "../../services/auth.service";
+import { HttpService } from "../../services/http.service";
 
 @Component({
   selector: "toprides-login-otp",
@@ -13,32 +14,69 @@ import { AuthService } from "../../services/auth.service";
 export class LoginOtpComponent {
   public phone: string;
   public shortPhone;
+  public resendingOTP: boolean = false;
+  public resent: boolean = false;
+  public verifying: boolean = false;
+  public invalidOTP: boolean = false;
+
   constructor(
     @Inject(MAT_DIALOG_DATA) public data: any,
     public dialogRef: MatDialogRef<LoginOtpComponent>,
     private ls: LocalStorageService,
     private router: Router,
-    private as: AuthService
+    private as: AuthService,
+    private http: HttpService
   ) {
     this.phone = data.phone;
     this.shortPhone = this.phone.slice(6, 10);
   }
 
-  validateLoginOtp(form: NgForm) {
+  verifyLoginOtp(form: NgForm) {
+    this.verifying = true;
+    this.http
+      .post("otp_verify", {
+        user_id: this.data.userId,
+        otp: form.value.otp
+      })
+      .then((res: any) => {
+        this.verifying = false;
+        if (res.errorCode == 0) {
+          this.loginUser(res.data[0]);
+        } else {
+          this.invalidOTP = true;
+        }
+      });
+  }
+
+  resendOTP() {
+    this.resendingOTP = true;
+
+    this.http
+      .post("resend_otp", {
+        user_id: this.data.userId
+      })
+      .then((res: any) => {
+        this.resendingOTP = false;
+        this.resent = true;
+
+        setTimeout(() => {
+          this.resent = false;
+        }, 3000);
+      });
+  }
+
+  loginUser(data) {
     this.ls.setItem(LOGGED_IN_USER, {
-      username: "Shobhit Singh",
-      id: "23",
-      phone: this.phone
+      uid: data.user_id,
+      name: data.first_name + " " + data.last_name,
+      email: data.email,
+      phone: data.phone
     });
 
     this.dialogRef.close();
 
-    this.router.navigate(["/rider"]).then(() => {
+    this.router.navigate(["/rider/dashboard"]).then(() => {
       this.as.checkLogin();
     });
-  }
-
-  resendOTP() {
-    console.log("OK");
   }
 }

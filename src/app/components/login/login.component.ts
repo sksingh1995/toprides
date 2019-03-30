@@ -10,6 +10,7 @@ import { LoginOtpComponent } from "../login-otp/login-otp.component";
 })
 export class LoginComponent {
   public loading: Boolean = false;
+
   constructor(
     private http: HttpService,
     private dialog: MatDialog,
@@ -24,18 +25,19 @@ export class LoginComponent {
         phone: form.value.phone,
         user_type: "1"
       })
-      .then(res => {
+      .then((res: any) => {
         this.dialogRef.close();
-        this.dialog.open(LoginOtpComponent);
+        if (res.errorCode == 0) {
+          this.dialog.open(LoginOtpComponent, {
+            data: {
+              phone: form.value.phone,
+              userId: res.data[0].user_id
+            }
+          });
+        }
       })
       .catch(err => {
         this.dialogRef.close();
-        this.dialog.open(LoginOtpComponent, {
-          disableClose: true,
-          data: {
-            phone: form.value.phone
-          }
-        });
       });
   }
 }

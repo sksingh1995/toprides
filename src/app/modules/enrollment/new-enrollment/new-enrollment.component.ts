@@ -2,6 +2,7 @@ import { Component, ViewChild } from "@angular/core";
 import { Title } from "@angular/platform-browser";
 import { HttpService } from "../../../services/http.service";
 import { NgForm, NgModel } from "@angular/forms";
+import { ENROLLMENT_BASE_URL } from "../../../config/const";
 
 @Component({
   selector: "toprides-new-enrollment",
@@ -15,8 +16,8 @@ export class NewEnrollmentComponent {
   public driverDocs: Array<any> = [];
   public avatar: string = "";
 
-  constructor(private http: HttpService,private title: Title) {
-  this.title.setTitle(`New Enrollment`);
+  constructor(private http: HttpService, private title: Title) {
+    this.title.setTitle(`New Enrollment`);
   }
 
   handleFileChange(e, type = "car_docs") {
@@ -64,7 +65,7 @@ export class NewEnrollmentComponent {
     }
 
     this.http
-      .post("sendmail.php", formdata)
+      .post(ENROLLMENT_BASE_URL + "sendmail.php", formdata)
       .then(res => {
         this.submitting = false;
         form.resetForm();

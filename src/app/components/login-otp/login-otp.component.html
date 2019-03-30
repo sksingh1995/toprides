@@ -11,7 +11,7 @@
         }}</strong
       >
     </span>
-    <form #form="ngForm" (submit)="form.valid && validateLoginOtp(form)">
+    <form #form="ngForm" (submit)="form.valid && verifyLoginOtp(form)">
       <div class="mt-4">
         <div class="row">
           <div class="col-lg-12">
@@ -29,20 +29,46 @@
             <span class="error" *ngIf="form.submitted && otp.errors"
               >Please enter a valid otp</span
             >
+            <span
+              class="error"
+              *ngIf="invalidOTP && (!verifying && !otp.errors)"
+              >OTP you have entered is invalid!</span
+            >
           </div>
         </div>
       </div>
-      <div class="mt-4">
-        <span class="th_txt ">I did’nt receive a code</span>
+
+      <div class="mt-2 w-100">
+        <span class="th_txt ">I didn't receive a code</span>
+
+        <span *ngIf="!resendingOTP">
+          <button
+            (click)="resendOTP()"
+            type="button"
+            class="btn btn-link th_clr"
+          >
+            <strong>Resend Code</strong>
+          </button>
+        </span>
+
+        <span *ngIf="resendingOTP" class="ml-2">
+          <strong>Resending <i class="fa fa-spinner fa-spin"></i></strong>
+        </span>
+
+        <span *ngIf="resent && !resendingOTP" class="ml-2">
+          <strong class="text-success">Sent <i class="fa fa-check"></i></strong>
+        </span>
       </div>
-      <div class="mt-2">
-        <button (click)="resendOTP()" type="button" class="btn btn-link th_clr">
-          <strong>Resend Code</strong>
-        </button>
-      </div>
+
       <div class="mb_100 mt-3">
-        <button type="submit" class="btn btn-dark w-100 fst_modal">
-          Verify
+        <button
+          [disabled]="verifying || resendingOTP || !form.valid"
+          class="btn btn-dark w-100"
+        >
+          <span *ngIf="verifying"
+            >Verifying <i class="fa fa-spinner fa-spin"></i
+          ></span>
+          <span *ngIf="!verifying">Verify</span>
         </button>
       </div>
     </form>

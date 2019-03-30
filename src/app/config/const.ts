@@ -1,5 +1,7 @@
 export const GOOGLE_API_KEY = "AIzaSyAlE4Xhx21Yd6W0c4ceHhDwCWzhcHMMjgI";
-export const API_URL = "https://appsinvo.com/topride/public/api/";
+export const API_URL = "http://35.200.183.158/api/";
+export const ENROLLMENT_BASE_URL = "http://52.66.235.25/toprides-server/";
+
 export const LOGGED_IN_USER = "au";
 export const GOOGLE_CAPTCHA_SITE_KEY =
   "6Le6IpUUAAAAAEuCtQWX6rLTVp9jPRusm2pvZQ8e";

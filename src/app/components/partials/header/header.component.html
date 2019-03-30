@@ -61,9 +61,12 @@
             ></i>
           </div>
         </div>
-        <div>
-          <!-- <a class="btn btn-primary mr-1" routerLink="/coming-soon">sign in</a>
-          <a class="btn btn-primary" routerLink="/coming-soon">sign up</a> -->
+        <div *ngIf="!isLoggedIn">
+          <a class="btn btn-primary mr-1" (click)="openLoginPopup()">sign in</a>
+          <!-- <a class="btn btn-primary" routerLink="/coming-soon">sign up</a> -->
+        </div>
+        <div *ngIf="isLoggedIn">
+          <a class="btn btn-primary" (click)="logout()">logout</a>
         </div>
       </div>
     </div>

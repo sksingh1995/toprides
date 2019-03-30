@@ -8,13 +8,17 @@ import { GOOGLE_API_KEY } from "../../config/const";
 import { AuthGuard } from "../../services/auth-guard.service";
 import { GooglePlaceAutocompleteDirective } from "../../directives/gpa.directive";
 import { RiderComponent } from "./rider.component";
+import { RiderBookingsComponent } from "./bookings/bookings.component";
 
 const routes: Routes = [
   { path: "", component: RiderComponent },
   {
     path: "dashboard",
-    component: RiderDashboardComponent
-    // canActivate: [AuthGuard]
+    component: RiderDashboardComponent,
+    canActivate: [AuthGuard],
+    children: [
+      { path: "", component: RiderBookingsComponent, outlet: "dashboard" }
+    ]
   },
   { path: "find-cars", component: FindCarComponent }
 ];
@@ -24,6 +28,7 @@ const routes: Routes = [
     RiderComponent,
     RiderDashboardComponent,
     FindCarComponent,
+    RiderBookingsComponent,
     GooglePlaceAutocompleteDirective
   ],
   imports: [

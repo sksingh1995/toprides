@@ -2,6 +2,7 @@ import { Component, ViewChild } from "@angular/core";
 import { HttpService } from "../../../services/http.service";
 import { NgForm, NgModel } from "@angular/forms";
 import { Title } from "@angular/platform-browser";
+import { ENROLLMENT_BASE_URL } from "../../../config/const";
 
 @Component({
   selector: "cab-enrollment",
@@ -15,8 +16,8 @@ export class CabEnrollmentComponent {
   public avatar: string = "";
   public uploadedFiles: any = "";
 
-  constructor(private http: HttpService,private title: Title) {
-  this.title.setTitle(`Enrollment For - Cab`);
+  constructor(private http: HttpService, private title: Title) {
+    this.title.setTitle(`Enrollment For - Cab`);
   }
 
   handleFileChange(e) {
@@ -53,7 +54,7 @@ export class CabEnrollmentComponent {
     }
 
     this.http
-      .post("cab.php", formdata)
+      .post(ENROLLMENT_BASE_URL + "cab.php", formdata)
       .then(res => {
         this.submitting = false;
         form.resetForm();

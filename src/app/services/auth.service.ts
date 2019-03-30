@@ -19,12 +19,7 @@ export class AuthService {
 
   checkLogin() {
     let user = this.getLoggedInUser();
-
-    if (user) {
-      this.isLoggedIn.next({ loggedIn: true, user });
-    } else {
-      this.isLoggedIn.next({ loggedIn: false, user });
-    }
+    this.isLoggedIn.next({ loggedIn: user != null, user });
   }
 
   getLoggedInUser() {

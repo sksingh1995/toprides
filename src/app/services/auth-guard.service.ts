@@ -2,7 +2,8 @@ import { Injectable } from "@angular/core";
 import {
   CanActivate,
   ActivatedRouteSnapshot,
-  RouterStateSnapshot
+  RouterStateSnapshot,
+  Router
 } from "@angular/router";
 import { AuthService } from "./auth.service";
 
@@ -10,7 +11,7 @@ import { AuthService } from "./auth.service";
   providedIn: "root"
 })
 export class AuthGuard implements CanActivate {
-  constructor(private as: AuthService) {}
+  constructor(private as: AuthService, private router: Router) {}
   canActivate(
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
@@ -20,7 +21,10 @@ export class AuthGuard implements CanActivate {
     if (user) {
       return true;
     } else {
-      this.as.openLoginPopup.next(true);
+      this.router.navigate(["/"]).then(() => {
+        this.as.openLoginPopup.next(true);
+      });
+
       return false;
     }
   }

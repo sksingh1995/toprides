@@ -19,14 +19,12 @@ export class HttpInterceptorService implements HttpInterceptor {
     request: HttpRequest<any>,
     next: HttpHandler
   ): Observable<HttpEvent<any>> {
-    let baseURL = "http://52.66.235.25/toprides-server/";
-    // let baseURL = "http://localhost/toprides/";
-
-    request = request.clone({
-      // url: baseURL + request.url
-      url: "https://cors-anywhere.herokuapp.com/" + baseURL + request.url
-      // headers: request.headers.append("Access-Control-Allow-Origin", "*")
-    });
+    if (request.url.indexOf("http") === -1) {
+      request = request.clone({
+        url: "https://cors-anywhere.herokuapp.com/" + API_URL + request.url
+        // headers: request.headers.append("Access-Control-Allow-Origin", "*")
+      });
+    }
 
     return next.handle(request).pipe(
       map((event: HttpEvent<any>) => {
