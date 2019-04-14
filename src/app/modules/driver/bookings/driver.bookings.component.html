@@ -1,0 +1,71 @@
+<div>
+  <h3 class="db_heading">My Bookings</h3>
+  <p class="fa fa-spinner fa-spin text-center" *ngIf="loading"></p>
+
+  <p
+    class="alert alert-danger text-center"
+    *ngIf="!loading && !bookings.length"
+  >
+    You have no booking!
+  </p>
+  <div class="booking driver_block z-depth-1" *ngFor="let booking of bookings">
+    <div class="row">
+      <div class="col-12 col-lg-6">
+        <div class="d-flex align-items-top">
+          <div class="mr-auto">
+            <span>Booking Id: {{ booking.booking_id }}</span>
+            <table class="table">
+              <tbody>
+                <tr>
+                  <td>{{ booking.pickup_time | date: "hh:mm:ss a" }}</td>
+                  <td>{{ booking.pickup_address }}</td>
+                </tr>
+                <tr>
+                  <td *ngIf="booking.drop_time">
+                    {{ booking.drop_time | date: "hh:mm:ss a" }}
+                  </td>
+                  <td *ngIf="!booking.drop_time"></td>
+                  <td>{{ booking.drop_address }}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div>
+            <span class="db_price"
+              >{{ booking.ride_price || booking.base_price | currency: "INR" }}
+            </span>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-lg-6">
+        <div class="dv_info">
+          <span>Driver</span>
+          <div class="d-flex align-items-center">
+            <div class="mr-auto">
+              <div class="dr_right">
+                <h3>{{ booking.driver_name }}</h3>
+                <span>{{ booking.vehicle_number | uppercase }}</span>
+                <p>{{ booking.ride_rating | number }}/5 Rated</p>
+                <div class="pr_image">
+                  <img
+                    [src]="booking.driver_image"
+                    alt="image"
+                    class="img-responsive"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="mr-4 text-center">
+              <img
+                src="assets/images/{{ bookingStatus[booking.status] }}.png"
+              />
+              <span class="d-block">{{
+                bookingStatus[booking.status] | uppercase
+              }}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

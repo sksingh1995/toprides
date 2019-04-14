@@ -18,6 +18,10 @@ export class LoginOtpComponent {
   public resent: boolean = false;
   public verifying: boolean = false;
   public invalidOTP: boolean = false;
+  private userTypes: object = {
+    1: "rider",
+    3: "driver"
+  };
 
   constructor(
     @Inject(MAT_DIALOG_DATA) public data: any,
@@ -70,13 +74,16 @@ export class LoginOtpComponent {
       uid: data.user_id,
       name: data.first_name + " " + data.last_name,
       email: data.email,
+      type: this.userTypes[data.user_type],
       phone: data.phone
     });
 
     this.dialogRef.close();
 
-    this.router.navigate(["/rider/dashboard"]).then(() => {
-      this.as.checkLogin();
-    });
+    this.router
+      .navigate([this.userTypes[data.user_type], "dashboard"])
+      .then(() => {
+        this.as.checkLogin();
+      });
   }
 }
