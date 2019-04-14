@@ -22,8 +22,7 @@ export class LoginComponent {
     this.http
       .post("login", {
         country_code: "+91",
-        phone: form.value.phone,
-        user_type: "1"
+        ...form.value
       })
       .then((res: any) => {
         this.dialogRef.close();

@@ -1,0 +1,8 @@
+p.fa-spinner {
+  width: 100%;
+  text-align: center;
+  font-size: 25px;
+}
+.booking:last-child {
+  margin-bottom: 20px;
+}

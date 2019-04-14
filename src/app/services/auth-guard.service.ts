@@ -18,14 +18,16 @@ export class AuthGuard implements CanActivate {
   ): boolean {
     let user = this.as.getLoggedInUser();
 
-    if (user) {
-      return true;
-    } else {
+    if (!user) {
       this.router.navigate(["/"]).then(() => {
         this.as.openLoginPopup.next(true);
       });
 
       return false;
+    } else if (user && user.type != next.data.user_type) {
+      return false;
+    } else {
+      return true;
     }
   }
 }

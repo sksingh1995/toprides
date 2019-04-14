@@ -8,7 +8,7 @@ import { GOOGLE_API_KEY } from "../../config/const";
 import { AuthGuard } from "../../services/auth-guard.service";
 import { GooglePlaceAutocompleteDirective } from "../../directives/gpa.directive";
 import { RiderComponent } from "./rider.component";
-import { RiderBookingsComponent } from "./bookings/bookings.component";
+import { RiderBookingsComponent } from "./bookings/rider.bookings.component";
 
 const routes: Routes = [
   { path: "", component: RiderComponent },
@@ -16,6 +16,7 @@ const routes: Routes = [
     path: "dashboard",
     component: RiderDashboardComponent,
     canActivate: [AuthGuard],
+    data: { user_type: "rider" },
     children: [
       { path: "", component: RiderBookingsComponent, outlet: "dashboard" }
     ]
