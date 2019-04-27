@@ -41,7 +41,7 @@ export class HeaderComponent implements OnInit {
     });
 
     this.as.openLoginPopup.subscribe(data => {
-      if (data) {
+      if (data && this.isBrowser) {
         this.openLoginPopup();
       }
     });

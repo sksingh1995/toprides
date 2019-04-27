@@ -13,14 +13,24 @@ export class ComingSoonComponent implements OnInit {
     private http: HttpClient,
     private meta: Meta,
     private title: Title
-  ) {}
+  ) { }
 
   ngOnInit() {
+    this.setMetaTags();
+  }
+
+  setMetaTags() {
+    this.title.setTitle(`Cab Travel Agency |Tour And Travel Agency Nearby You`);
+
     this.meta.addTag({
       name: "description",
-      content: `Book a car from anywhere in 3 simple clicks`
+      content: `Find comfortable travel by top ride travel agency in agra, cab travel agency, travel agency nearby you, tour and travel agency, online travel agency, online cab travel agency, cab tour and travel`
     });
 
-    this.title.setTitle(`Coming Soon`);
+    this.meta.addTag({
+      name: "keywords",
+      content: `cab travel agency, tour and travel agency nearby you, travel agency in agra, tour and travel agency, online travel agency, online cab travel agency, cab tour and travel agency , online booking travel agency, travel agency near me`
+    });
+
   }
 }

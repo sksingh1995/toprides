@@ -10,12 +10,13 @@ import { LoginOtpComponent } from "../login-otp/login-otp.component";
 })
 export class LoginComponent {
   public loading: Boolean = false;
+  public user_type: any = 1;
 
   constructor(
     private http: HttpService,
     private dialog: MatDialog,
     public dialogRef: MatDialogRef<LoginComponent>
-  ) {}
+  ) { }
 
   onLoginSubmit(form: NgForm) {
     this.loading = true;
