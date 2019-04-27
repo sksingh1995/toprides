@@ -8,57 +8,27 @@
           </a>
         </div>
         <div class="mr-auto">
-          <ul
-            class="hd_menu mnu_center res_munu transition"
-            [ngClass]="{ left_0: isLeft0 }"
-          >
+          <ul class="hd_menu mnu_center res_munu transition" [ngClass]="{ left_0: isLeft0 }">
             <li>
-              <a
-                routerLinkActive="active-link"
-                routerLink="/driver"
-                class="transtition"
-                >Driver</a
-              >
+              <a routerLinkActive="active-link" routerLink="/driver" class="transtition">Driver</a>
             </li>
             <li>
-              <a
-                routerLinkActive="active-link"
-                routerLink="/rider"
-                class="transtition"
-                >Rider</a
-              >
+              <a routerLinkActive="active-link" routerLink="/rider" class="transtition">Rider</a>
             </li>
             <li>
-              <a
-                routerLinkActive="active-link"
-                routerLink="/coming-soon"
-                class="transtition"
-                >Travel Agency</a
-              >
+              <a routerLinkActive="active-link" routerLink="/coming-soon" class="transtition">Travel Agency</a>
             </li>
             <li>
-              <a
-                routerLinkActive="active-link"
-                routerLink="/business"
-                class="transtition"
-                >Business</a
-              >
+              <a routerLinkActive="active-link" routerLink="/business-with-travel-agency"
+                class="transtition">Business</a>
             </li>
             <li>
-              <a
-                routerLinkActive="active-link"
-                routerLink="/enrollment"
-                class="transtition"
-                >Enrollment</a
-              >
+              <a routerLinkActive="active-link" routerLink="/online-cab-enrollment" class="transtition">Enrollment</a>
             </li>
           </ul>
           <div>
-            <i
-              class="fas"
-              [ngClass]="{ 'fa-bars': !isLeft0, 'fa-times-circle': isLeft0 }"
-              (click)="isLeft0 = !isLeft0"
-            ></i>
+            <i class="fas" [ngClass]="{ 'fa-bars': !isLeft0, 'fa-times-circle': isLeft0 }"
+              (click)="isLeft0 = !isLeft0"></i>
           </div>
         </div>
         <div *ngIf="!isLoggedIn">

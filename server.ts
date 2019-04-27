@@ -3,7 +3,8 @@ import 'zone.js/dist/zone-node';
 import 'reflect-metadata';
 
 import { enableProdMode } from '@angular/core';
-
+import * as https from 'https';
+import * as fs from 'fs';
 import * as express from 'express';
 import { join } from 'path';
 
@@ -48,6 +49,15 @@ app.get('*', (req, res) => {
 });
 
 // Start up the Node server
+https.createServer({
+  key: fs.readFileSync('/etc/apache2/ssl/topridecabs.key', 'utf8'),
+  cert: fs.readFileSync('/etc/apache2/ssl/topridecabs.bundle.crt', 'utf8'),
+  passphrase: 'Secure@123'
+}, app)
+  .listen(PORT, () => {
+    console.log(`Node server listening on http://localhost:${PORT}`);
+  });
+
 app.listen(PORT, () => {
   console.log(`Node server listening on http://localhost:${PORT}`);
 });

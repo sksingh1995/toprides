@@ -23,7 +23,6 @@ export class CareerComponent {
       name: "keywords",
       content: `career with top ride cabs, enhance your career with top ride cabs, grow career with top ride cabs, how to improve your career in top ride cabs`
     });
-
   }
 
 }

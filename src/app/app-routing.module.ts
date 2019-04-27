@@ -2,13 +2,14 @@ import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
 import { HomeComponent } from "./components/home/home.component";
 import { ComingSoonComponent } from "./components/coming-soon/coming-soon.component";
+import { NotFoundComponent } from "./components/404/not-found.component";
 
 const routes: Routes = [
   { path: "", component: HomeComponent },
   { path: "coming-soon", component: ComingSoonComponent },
-  { path: "about", loadChildren: "./modules/about/about.module#AboutModule" },
+  { path: "about-cab-booking-company", loadChildren: "./modules/about/about.module#AboutModule" },
   {
-    path: "business",
+    path: "business-with-travel-agency",
     loadChildren: "./modules/business/business.module#BusinessModule"
   },
   {
@@ -16,11 +17,11 @@ const routes: Routes = [
     loadChildren: "./modules/contactus/contactus.module#ContactUsModule"
   },
   {
-    path: "career",
+    path: "career-topride-cabs",
     loadChildren: "./modules/career/career.module#CareerModule"
   },
   {
-    path: "enrollment",
+    path: "online-cab-enrollment",
     loadChildren: "./modules/enrollment/enrollment.module#EnrollmentModule"
   },
   {
@@ -37,6 +38,10 @@ const routes: Routes = [
   {
     path: "driver",
     loadChildren: "./modules/driver/driver.module#DriverModule"
+  },
+  {
+    path: "**",
+    component: NotFoundComponent
   }
 ];
 
@@ -44,4 +49,4 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }

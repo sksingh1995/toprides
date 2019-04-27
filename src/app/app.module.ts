@@ -20,6 +20,7 @@ import { LoginOtpComponent } from "./components/login-otp/login-otp.component";
 import { HttpInterceptorService } from "./services/http-interceptor.service";
 import { ComingSoonComponent } from "./components/coming-soon/coming-soon.component";
 import { SharedModule } from "./modules/shared.module";
+import { NotFoundComponent } from "./components/404/not-found.component";
 
 @NgModule({
   imports: [
@@ -39,7 +40,8 @@ import { SharedModule } from "./modules/shared.module";
     HeaderComponent,
     FooterComponent,
     LoginComponent,
-    LoginOtpComponent
+    LoginOtpComponent,
+    NotFoundComponent
   ],
   entryComponents: [LoginComponent, LoginOtpComponent],
   providers: [

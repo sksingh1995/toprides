@@ -1,6 +1,6 @@
 import { Component, ViewChild } from "@angular/core";
 import { NgForm } from "@angular/forms";
-import { Title } from "@angular/platform-browser";
+import { Title, Meta } from "@angular/platform-browser";
 import { HttpService } from "../../services/http.service";
 import { GOOGLE_CAPTCHA_SITE_KEY } from "../../config/const";
 import { ReCaptcha2Component } from "ngx-captcha";
@@ -17,8 +17,17 @@ export class ContactUsComponent {
   submitted: boolean = false;
   siteKey: string = GOOGLE_CAPTCHA_SITE_KEY;
 
-  constructor(private http: HttpService, private title: Title) {
-    this.title.setTitle(`Contact Us`);
+  constructor(private http: HttpService, private title: Title, private meta: Meta) {
+    this.setMetaTags();
+  }
+
+  setMetaTags() {
+    this.title.setTitle(`For Any Query Contact Us –Top Ride Online Cab in Agra`);
+
+    this.meta.addTag({
+      name: "keywords",
+      content: `top ride Online Cab, cab service, online cab booking service in agra`
+    });
   }
 
   handleCaptcha(e) {
