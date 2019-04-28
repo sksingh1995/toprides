@@ -1,0 +1,32 @@
+<div class="row">
+  <div class="col-12">
+    <form #f="ngForm" (submit)="f.valid && onSupport(f)">
+      <p class="text-center">
+        <strong>
+          If you need any help, Please contact us +91-780-606-0606
+        </strong>
+      </p>
+
+      <div class="alert alert-success text-center" *ngIf="submitted">
+        <strong>
+          <i class="fa fa-check"></i> Messsage send to Top-Ride Support Team, your query will resolve soon.
+        </strong>
+      </div>
+      <div class="form-group">
+        <textarea name="support_msg" class="form-control" rows="6" placeholder="Type your message here" required ngModel
+          #msg="ngModel"></textarea>
+        <span class="error" *ngIf="f.submitted && msg.errors?.required">
+          Please enter your message.
+        </span>
+      </div>
+      <div class="form-group mt-2">
+        <div class="row text-center">
+          <button [disabled]="!f.valid || submitting" class="btn-dark btn m-auto dark_ovr">
+            <span *ngIf="submitting">Please Wait <i class="fa fa-spinner fa-spin"></i></span>
+            <span *ngIf="!submitting">Submit</span>
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

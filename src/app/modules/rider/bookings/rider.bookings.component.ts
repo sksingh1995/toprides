@@ -2,6 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { LocalStorageService } from "../../../services/dom.service";
 import { LOGGED_IN_USER } from "../../../config/const";
 import { HttpService } from "../../../services/http.service";
+import { Title } from "@angular/platform-browser";
 
 @Component({
   selector: "rider-bookings",
@@ -18,10 +19,12 @@ export class RiderBookingsComponent implements OnInit {
   };
   public loading: Boolean = false;
 
-  constructor(private ls: LocalStorageService, private http: HttpService) {}
+  constructor(private ls: LocalStorageService, private http: HttpService, private title: Title) {
+  }
 
   ngOnInit() {
     this.user = this.ls.getItem(LOGGED_IN_USER);
+    this.title.setTitle(this.user.type.toUpperCase() + ' | Dashboard');
     this.getBookings();
   }
 

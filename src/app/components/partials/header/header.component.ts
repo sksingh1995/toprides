@@ -4,7 +4,6 @@ import { MatDialog } from "@angular/material/dialog";
 import { AuthService } from "../../../services/auth.service";
 import { isPlatformBrowser } from "@angular/common";
 import { Router, NavigationEnd } from "@angular/router";
-import { LoginOtpComponent } from "../../login-otp/login-otp.component";
 
 @Component({
   selector: "toprides-header",
@@ -16,6 +15,7 @@ export class HeaderComponent implements OnInit {
   public isBrowser: Boolean = false;
   public isLeft0: Boolean = false;
   public pagescrolled: Boolean = false;
+  public blackHeader: Boolean = false;
   @Input("isHomePage") isHomePage: Boolean;
   public user: any;
 
@@ -31,6 +31,7 @@ export class HeaderComponent implements OnInit {
   ngOnInit() {
     this.router.events.subscribe(event => {
       if (event instanceof NavigationEnd) {
+        this.checkBlackHeader(event);
         this.isLeft0 = false;
       }
     });
@@ -65,5 +66,14 @@ export class HeaderComponent implements OnInit {
         this.pagescrolled = document.documentElement.scrollTop > 50;
       };
     }
+  }
+
+  /**
+   * decides weather to add black background to header or not
+   * @param event: NavigationEnd
+   * @returns void
+   */
+  checkBlackHeader(event: NavigationEnd) {
+    this.blackHeader = event.url.indexOf('dashboard') != -1;
   }
 }

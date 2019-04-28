@@ -11,8 +11,8 @@ import { isPlatformBrowser, Location } from "@angular/common";
 })
 export class AppComponent {
   private isBrowser: Boolean;
-
   public isHomePage: boolean = false;
+  public shouldShowFooter: boolean = true;
 
   constructor(
     private http: HttpService,
@@ -28,6 +28,7 @@ export class AppComponent {
 
   onRouteChange(event) {
     if (this.isBrowser) {
+      this.shouldRenderFooter();
       setTimeout(() => {
         window.scroll(0, 0);
       }, 100);
@@ -39,7 +40,7 @@ export class AppComponent {
   initTawk() {
     var Tawk_API = Tawk_API || {},
       Tawk_LoadStart = new Date();
-    (function() {
+    (function () {
       var s1 = document.createElement("script"),
         s0 = document.getElementsByTagName("script")[0];
       s1.async = true;
@@ -48,5 +49,13 @@ export class AppComponent {
       s1.setAttribute("crossorigin", "*");
       s0.parentNode.insertBefore(s1, s0);
     })();
+  }
+
+  /**
+* decides weather to add black background to header or not
+* @returns void
+*/
+  shouldRenderFooter() {
+    this.shouldShowFooter = this.location.path().indexOf('dashboard') === -1;
   }
 }

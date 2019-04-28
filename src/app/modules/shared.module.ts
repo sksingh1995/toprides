@@ -4,10 +4,11 @@ import { FormsModule } from "@angular/forms";
 import { CustomFormsModule } from "ngx-custom-validators";
 import { MatDatepickerModule } from "@angular/material/datepicker";
 import { MatNativeDateModule } from "@angular/material/core";
+import { SupportComponent } from "../components/support/support.component";
 
 @NgModule({
-  declarations: [],
-  imports: [CommonModule],
+  declarations: [SupportComponent],
+  imports: [CommonModule, FormsModule],
   exports: [
     FormsModule,
     CustomFormsModule,
@@ -16,4 +17,4 @@ import { MatNativeDateModule } from "@angular/material/core";
   ],
   providers: [MatDatepickerModule]
 })
-export class SharedModule {}
+export class SharedModule { }

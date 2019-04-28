@@ -5,8 +5,5 @@ import { Component, OnInit } from "@angular/core";
   templateUrl: "./driver-dashboard.component.html",
   styleUrls: ["./driver-dashboard.component.css"]
 })
-export class DriverDashboardComponent implements OnInit {
-  constructor() {}
-
-  ngOnInit() {}
+export class DriverDashboardComponent {
 }

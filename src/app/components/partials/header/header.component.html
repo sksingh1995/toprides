@@ -1,5 +1,5 @@
 <div [ngClass]="{ banner: isHomePage }">
-  <header id="main_header" [ngClass]="{ pagescrolled: pagescrolled }">
+  <header id="main_header" [ngClass]="{ pagescrolled: (pagescrolled || blackHeader) }">
     <div class="container-fluid">
       <div class="d-flex align-items-center">
         <div class="mr-5">
@@ -33,11 +33,20 @@
         </div>
         <div *ngIf="!isLoggedIn">
           <a class="btn btn-primary mr-1" (click)="openLoginPopup()">sign in</a>
-          <!-- <a class="btn btn-primary" routerLink="/coming-soon">sign up</a> -->
         </div>
-        <div *ngIf="isLoggedIn">
-          <a class="btn btn-primary" (click)="logout()">logout</a>
-        </div>
+
+        <ul class="nav nav-tabs" *ngIf="isLoggedIn">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
+              aria-expanded="false">{{user.name | titlecase}}</a>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" [routerLink]="[user.type,'dashboard']">Dashboard</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" (click)="logout()">Logout</a>
+            </div>
+          </li>
+        </ul>
+
       </div>
     </div>
   </header>
