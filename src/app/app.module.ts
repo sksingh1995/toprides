@@ -15,6 +15,7 @@ import { LoginComponent } from "./components/login/login.component";
 import { FooterComponent } from "./components/partials/footer/footer.component";
 import { TransferHttpCacheModule } from "@nguniversal/common";
 import { MatDialogModule } from "@angular/material/dialog";
+import { MatMenuModule } from '@angular/material/menu';
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { LoginOtpComponent } from "./components/login-otp/login-otp.component";
 import { HttpInterceptorService } from "./services/http-interceptor.service";
@@ -31,6 +32,7 @@ import { NotFoundComponent } from "./components/404/not-found.component";
     SharedModule,
     HttpClientModule,
     MatDialogModule,
+    MatMenuModule,
     TransferHttpCacheModule
   ],
   declarations: [

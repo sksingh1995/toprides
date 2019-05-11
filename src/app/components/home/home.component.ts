@@ -60,16 +60,16 @@ export class HomeComponent implements OnInit {
   }
 
   setMetaTags() {
-    this.title.setTitle(`Online Cab Booking | Book Cab at Lowest Price Near by You`);
+    this.title.setTitle(`Taxi Service in Agra | Cab in Agra at Topride cabs`);
 
     this.meta.addTag({
       name: "description",
-      content: `Top ride provide service online cab booking at lowest price at nearby you. Online taxi book, book cab at best price, online cab booking in agra, cab booking in agra, taxi booking online`
+      content: `Topride cabs offer cab service in agra, taxi service in agra. You can book full day cabs in Agra. get taxi service nearby your location for best fares`
     });
 
     this.meta.addTag({
       name: "keywords",
-      content: `online Cab booking, Book cab at lowest price nearby you, online taxi book , online cab booking in agra, cab booking in agar, taxi booking online, cheap taxi booking, hire taxi nearby you, book safe cab, online book cab`
+      content: `agra taxi, cabs in agra, taxi in agra,taxi service in agra, agra to fatehpur sikri taxi fare, car rental in agra, topride cabs in agra, cab service in agra, agra taxi, topride cab booking, agra taxi hire, taxi booking in agra, online cab booking`
     });
 
   }

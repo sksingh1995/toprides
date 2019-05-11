@@ -35,18 +35,14 @@
           <a class="btn btn-primary mr-1" (click)="openLoginPopup()">sign in</a>
         </div>
 
-        <ul class="nav nav-tabs" *ngIf="isLoggedIn">
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
-              aria-expanded="false">{{user.name | titlecase}}</a>
-            <div class="dropdown-menu">
-              <a class="dropdown-item" [routerLink]="[user.type,'dashboard']">Dashboard</a>
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item" (click)="logout()">Logout</a>
-            </div>
-          </li>
-        </ul>
-
+        <div *ngIf="isLoggedIn" class="user-opt-menu">
+          <button mat-button [matMenuTriggerFor]="userOpt">{{user.name | titlecase}} <i
+              class="fa fa-caret-down"></i></button>
+          <mat-menu #userOpt="matMenu">
+            <a mat-menu-item [routerLink]="[user.type,'dashboard']">Dashboard</a>
+            <a mat-menu-item (click)="logout()">Logout</a>
+          </mat-menu>
+        </div>
       </div>
     </div>
   </header>
